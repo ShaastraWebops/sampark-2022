@@ -1,0 +1,41 @@
+.title {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.left-lines, .right-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25vw;
+  align-items: flex-start;
+}
+
+.right-lines {
+    align-items: flex-end;
+}
+
+.start-end-line {
+  width: 16vw;
+  height: 10px;
+  background-color: #b9d3f2;
+}
+
+.middle-line {
+  margin: 10px 0;
+  height: 10px;
+  width: 23vw;
+  background-color: #ff6363;
+}
+
+.title-text {
+  width: 45vw;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 90px;
+  line-height: 132px;
+  text-align: center;
+  color: #cccce2;
+}

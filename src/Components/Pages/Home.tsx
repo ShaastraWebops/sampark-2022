@@ -1,17 +1,114 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../Shared/Navbar";
+import Title from "../Shared/Title";
+import Footer from "../Shared/Footer";
+import ContactCard from "../Shared/ContactCard";
+import CSS from "../../Images/css.png";
+import CPP from "../../Images/cpp.png";
+import Python from "../../Images/python.png";
+import JS from "../../Images/js.png";
+import { contacts, description, oneLiner } from "../../Data/Home";
+import "../../Styles/Home.css";
+import WorkshopCard from "../Shared/WorkshopCard";
 
-interface Props {
-    
-}
+interface Props {}
 
 const Home = (props: Props) => {
-    return (
-        <div>
-          <h1>Welcome to Sampark 2022!</h1>
+  const workshops = [
+    {
+      id: "1",
+      title: "WORKSHOP 1",
+      date: "25th Oct",
+      image:
+        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
+    },
+    {
+      id: "2",
+      title: "WORKSHOP 2",
+      date: "25th Oct",
+      image:
+        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
+    },
+    {
+      id: "3",
+      title: "WORKSHOP 3",
+      date: "25th Oct",
+      image:
+        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
+    },
+    {
+      id: "4",
+      title: "WORKSHOP 4",
+      date: "25th Oct",
+      image:
+        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
+    },
+    {
+      id: "5",
+      title: "WORKSHOP 5",
+      date: "25th Oct",
+      image:
+        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
+    },
+  ];
+
+  return (
+    <div className="home">
+      <Navbar />
+
+      {/** LANDING **/}
+      <div id="home" className="landing-section">
+        <div className="sampark-title">SAMPARK</div>
+        <div className="sampark-title">2021</div>
+        <div className="sampark-one-line">{oneLiner}</div>
+        <button className="home-register">REGISTER NOW</button>
+      </div>
+
+      {/** ABOUT US **/}
+      <div id="about" className="about-us">
+        <div className="about-us-left-part">
+          <div className="collage-text"></div>
+          <div className="collage-image">
+            <img src={CSS} />
+            <img src={Python} />
+            <img src={JS} />
+            <img src={CPP} />
+          </div>
         </div>
-    )
-}
+        <div className="description">{description}</div>
+      </div>
 
-export default Home
+      {/** WORKSHOPS **/}
+      <div id="workshops" className="workshops">
+        <Title title="WORKSHOPS" />
+        <div className="workshops-list">
+          {workshops.map((workshop) => (
+            <WorkshopCard
+              id={workshop.id}
+              title={workshop.title}
+              date={workshop.date}
+              image={workshop.image}
+            />
+          ))}
+        </div>
+      </div>
 
+      {/** CONTACT US **/}
+      <div id="contact" className="contact-us">
+        <Title title="CONTACT US" />
+        <div className="contacts-list">
+          {contacts.map((contact) => (
+            <ContactCard
+              name={contact.name}
+              email={contact.email}
+              number={contact.number}
+            />
+          ))}
+        </div>
+        <Footer />
+      </div>
+    </div>
+  );
+};
 
+export default Home;
