@@ -8,10 +8,11 @@
 /********* LANDING PAGE ************/
 .landing-section {
   background-image: url("../Images/landing.png");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
   min-height: 100vh;
-  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,6 +36,7 @@
   font-weight: normal;
   font-size: 40px;
   color: #ffffff;
+  text-align: center;
 }
 
 .home-register {
@@ -46,15 +48,31 @@
   font-style: normal;
   font-weight: normal;
   font-size: 1.5em;
-  /* line-height: 45px; */
   color: #000000;
   border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .sampark-title {
+    font-size: 55px;
+  }
+
+  .sampark-one-line {
+    font-size: 20px;
+  }
+
+  .home-register {
+    font-size: 1em;
+    padding: 10px;
+  }
 }
 
 /********* ABOUT US ************/
 .about-us {
   background-image: url("../Images/about.png");
-  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -68,27 +86,43 @@
   align-items: center;
 }
 
+.about-us-title {
+  display: none;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  text-align: center;
+  color: #ffffff;
+}
+
 .collage-text {
   width: 45vw;
   height: 500px;
   display: flex;
   filter: drop-shadow(5px 4px 20px rgba(255, 255, 249, 0.16));
   backdrop-filter: blur(50px);
-  background-image: url("../Images/collage.png");
-  background-size: cover;
+}
+
+.collage-text > img {
+  position: absolute;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 .collage-image {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  margin-top: 30px;
 }
 
 .collage-image > img {
   height: 100px;
+  margin: 30px 30px;
 }
 
 .description {
@@ -99,9 +133,32 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
-  font-size: 30px;
+  font-size: 1.8em;
   text-align: center;
   color: #000000;
+}
+
+@media only screen and (max-width: 900px) {
+  .about-us {
+    flex-direction: column-reverse;
+  }
+
+  .about-us-title {
+    display: block;
+  }
+
+  .description {
+    background: none;
+    width: 90%;
+    font-size: 1.4em;
+    color: #ffffff;
+  }
+
+  .collage-text {
+    width: 90vw;
+    height: 320px;
+    background-size: cover;
+  }
 }
 
 /********* WORKSHOPS ************/
@@ -127,8 +184,6 @@
 }
 
 .contacts-list {
-  height: fit-content;
-  margin: auto 0;
   display: flex;
   flex-wrap: wrap;
   flex: auto;

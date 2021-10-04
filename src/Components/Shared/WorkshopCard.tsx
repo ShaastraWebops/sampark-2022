@@ -11,7 +11,7 @@ interface Props {
 const WorkshopCard = (props: Props) => {
   return (
     <div className="workshop-card">
-      <img src={props.image} />
+      <img src={props.image} alt="Workshop"/>
       <div className="workshop-heading">
         <p>{props.title}</p>
         <p>{props.date}</p>

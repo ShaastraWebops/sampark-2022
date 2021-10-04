@@ -1,12 +1,11 @@
 .footer {
-  height: 180px;
   background: #ffffff;
   border-radius: 0px 150px 0px 0px;
   align-items: flex-end;
 }
 
 .social-links {
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,16 +14,23 @@
 
 .social-links > a {
   padding: 0px 20px;
-} 
+}
 
 .footer-text-1 {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 48px;
+  padding: 10px;
   text-align: center;
   color: #000000;
+}
+
+.footer-divider {
+  height: 5px;
+  width: 20vw;
+  background-color: #ff6363;
+  margin: 0 auto 10px auto;
 }
 
 .footer-text-2 {
@@ -32,7 +38,24 @@
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  line-height: 47px;
   text-align: center;
   color: #000000;
+}
+
+.team-members-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
+}
+
+.team-member {
+  margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    border-radius: 0px 75px 0px 0px;
+  }
 }

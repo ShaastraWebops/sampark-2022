@@ -36,4 +36,27 @@ const contacts = [
   },
 ];
 
-export { oneLiner, description, contacts };
+const webOpsTeam = [
+  {
+    name: "Drishti",
+    number: "9944010785",
+  },
+  {
+    name: "Janith M S",
+    number: "9944010785",
+  },
+  {
+    name: "Krithika",
+    number: "9944010785",
+  },
+  {
+    name: "Tusar",
+    number: "9944010785",
+  },
+  {
+    name: "Yogesh",
+    number: "9944010785",
+  },
+];
+
+export { oneLiner, description, contacts, webOpsTeam };

@@ -4,7 +4,8 @@
   height: fit-content;
 }
 
-.left-lines, .right-lines {
+.left-lines,
+.right-lines {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,11 +14,11 @@
 }
 
 .right-lines {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 .start-end-line {
-  width: 16vw;
+  width: 64%;
   height: 10px;
   background-color: #b9d3f2;
 }
@@ -25,17 +26,54 @@
 .middle-line {
   margin: 10px 0;
   height: 10px;
-  width: 23vw;
+  width: 92%;
   background-color: #ff6363;
 }
 
 .title-text {
-  width: 45vw;
+  /* width: 45vw; */
   font-family: "Lato";
   font-style: normal;
   font-weight: 800;
-  font-size: 90px;
-  line-height: 132px;
+  font-size: 5em;
+  padding: 10px;
   text-align: center;
   color: #cccce2;
+}
+
+@media only screen and (max-width: 1100px) {
+  .title-text {
+    font-size: 3.5em;
+  }
+
+  .start-end-line,
+  .middle-line {
+    height: 8px;
+  }
+}
+
+@media only screen and (max-width: 775px) {
+  .title {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .left-lines,
+  .right-lines {
+    width: 90vw;
+  }
+
+  .right-lines {
+    align-self: flex-end;
+  }
+
+  .start-end-line {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .title-text {
+    font-size: 2.9em;
+  }
 }

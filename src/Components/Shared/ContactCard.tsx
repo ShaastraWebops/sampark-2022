@@ -15,13 +15,13 @@ const ContactCard = (props: Props) => {
       <div className="contact-name">{props.name}</div>
       <a href={`mailto:${props.email}`}>
         <div className="contact-email">
-          <FaEnvelope /> {props.email}
+          <FaEnvelope /> &nbsp; {props.email}
         </div>
       </a>
       <a href={`http://wa.me/+91${props.number}`}>
         <div className="contact-number">
           <FaWhatsappSquare />
-          {props.number}
+          &nbsp; {props.number}
         </div>
       </a>
     </div>

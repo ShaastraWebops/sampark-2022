@@ -3,6 +3,7 @@ import Navbar from "../Shared/Navbar";
 import Title from "../Shared/Title";
 import Footer from "../Shared/Footer";
 import ContactCard from "../Shared/ContactCard";
+import Collage from "../../Images/collage.png";
 import CSS from "../../Images/css.png";
 import CPP from "../../Images/cpp.png";
 import Python from "../../Images/python.png";
@@ -67,15 +68,18 @@ const Home = (props: Props) => {
       {/** ABOUT US **/}
       <div id="about" className="about-us">
         <div className="about-us-left-part">
-          <div className="collage-text"></div>
+          <div className="collage-text">
+            <img src={Collage} alt="Collage"/>
+          </div>
           <div className="collage-image">
-            <img src={CSS} />
-            <img src={Python} />
-            <img src={JS} />
-            <img src={CPP} />
+            <img src={CSS} alt="CSS"/>
+            <img src={Python} alt="Python"/>
+            <img src={JS} alt="JS"/>
+            <img src={CPP} alt="C++"/>
           </div>
         </div>
         <div className="description">{description}</div>
+        <div className={"about-us-title"}>WHO ARE WE</div>
       </div>
 
       {/** WORKSHOPS **/}
