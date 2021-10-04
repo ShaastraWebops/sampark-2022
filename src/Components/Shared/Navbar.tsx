@@ -62,9 +62,20 @@ const Navbar = (props: Props) => {
         <div className="profile-name">HELLO {name}</div>
         <div className="sampark-id">{spId}</div>
       </div>
-      <button className="navbar-profile" onClick={() => setIsMenuON(!isMenuON)}>
-        <img src={Profile} alt="Profile" />
-      </button>
+      {window.innerWidth >= 1000 ? (
+        <button
+          className="navbar-profile"
+          onClick={() => setIsMenuON(!isMenuON)}
+        >
+          <img src={Profile} alt="Profile" />
+        </button>
+      ) : (
+        <button className="hamburger-mobile" onClick={() => setIsMenuON(!isMenuON)}>
+          <div className={isMenuON ? "change-bar1" : "bar1"}></div>
+          <div className={isMenuON ? "change-bar2" : "bar2"}></div>
+          <div className={isMenuON ? "change-bar3" : "bar3"}></div>
+        </button>
+      )}
     </div>
   );
 };

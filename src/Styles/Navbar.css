@@ -11,7 +11,7 @@
 
 .shaastra-logo {
   height: 60px;
-  padding-left: 40px;
+  margin-left: 40px;
 }
 
 .navbar-profile {
@@ -21,7 +21,7 @@
 }
 
 .navbar-profile:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .navbar-profile > img {
@@ -51,7 +51,7 @@
   font-size: 20px;
   text-align: center;
   color: #ffffff;
-  padding-right: 40px;
+  margin-right: 40px;
 }
 
 .hamburger {
@@ -77,4 +77,50 @@
 
 .not-active {
   display: none;
+}
+
+.hamburger-mobile {
+  display: inline-block;
+  cursor: pointer;
+  color: none;
+  margin-right: 7px;
+  background: none;
+  border: none;
+}
+
+.bar1,
+.bar2,
+.bar3,
+.change-bar1,
+.change-bar2,
+.change-bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change-bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change-bar2 {
+  opacity: 0;
+}
+
+.change-bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar-profile {
+    margin-right: 5px;
+  }
+
+  .shaastra-logo {
+    margin-left: 5px;
+  }
 }
