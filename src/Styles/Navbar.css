@@ -4,4 +4,77 @@
   height: 74px;
   background: #292a89;
   border-radius: 0px 0px 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shaastra-logo {
+  height: 60px;
+  padding-left: 40px;
+}
+
+.navbar-profile {
+  margin-right: 40px;
+  background: none;
+  border: none;
+}
+
+.navbar-profile:hover {
+  cursor:pointer;
+}
+
+.navbar-profile > img {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.profile-info {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  padding-right: 40px;
+}
+
+.hamburger {
+  position: absolute;
+  top: 74px;
+  right: 0;
+  background: #ffffff;
+  box-shadow: -5px 6px 20px rgba(0, 0, 0, 0.38);
+  border-radius: 0px 0px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 20px 20px;
+}
+
+.hamburger > .nav-link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3em;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.not-active {
+  display: none;
 }
