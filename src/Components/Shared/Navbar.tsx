@@ -18,10 +18,10 @@ const Navbar = (props: Props) => {
   );
   const navPage = (
     <Fragment>
-      <a href="#home" className="nav-link">
+      <a href="/#home" className="nav-link">
         HOME
       </a>
-      <a href="#workshops" className="nav-link">
+      <a href="/#workshops" className="nav-link">
         WORKSHOPS
       </a>
       <a href="/schedule" className="nav-link">
@@ -30,7 +30,7 @@ const Navbar = (props: Props) => {
       <a href="/help-desk" className="nav-link">
         HELP DESK
       </a>
-      <a href="#contact" className="nav-link">
+      <a href="/#contact" className="nav-link">
         CONTACT US
       </a>
       {window.innerWidth < 1000 && navAuth}

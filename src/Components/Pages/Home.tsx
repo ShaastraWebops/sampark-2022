@@ -69,13 +69,13 @@ const Home = (props: Props) => {
       <div id="about" className="about-us">
         <div className="about-us-left-part">
           <div className="collage-text">
-            <img src={Collage} alt="Collage"/>
+            <img src={Collage} alt="Collage" />
           </div>
           <div className="collage-image">
-            <img src={CSS} alt="CSS"/>
-            <img src={Python} alt="Python"/>
-            <img src={JS} alt="JS"/>
-            <img src={CPP} alt="C++"/>
+            <img src={CSS} alt="CSS" />
+            <img src={Python} alt="Python" />
+            <img src={JS} alt="JS" />
+            <img src={CPP} alt="C++" />
           </div>
         </div>
         <div className="description">{description}</div>
@@ -84,7 +84,7 @@ const Home = (props: Props) => {
 
       {/** WORKSHOPS **/}
       <div id="workshops" className="workshops">
-        <Title title="WORKSHOPS" />
+        <Title title="WORKSHOPS" isHomePage={true} />
         <div className="workshops-list">
           {workshops.map((workshop) => (
             <WorkshopCard
@@ -99,7 +99,7 @@ const Home = (props: Props) => {
 
       {/** CONTACT US **/}
       <div id="contact" className="contact-us">
-        <Title title="CONTACT US" />
+        <Title title="CONTACT US" isHomePage={true} />
         <div className="contacts-list">
           {contacts.map((contact) => (
             <ContactCard
