@@ -45,6 +45,11 @@
   color: #ffffff;
 }
 
+.nav-links > a:hover {
+  border-bottom: 3px solid #ff6363;
+  letter-spacing: 0.5px;
+}
+
 .profile-info {
   font-family: "Roboto";
   font-style: normal;

@@ -18,36 +18,36 @@ const Home = (props: Props) => {
   const workshops = [
     {
       id: "1",
-      title: "WORKSHOP 1",
-      date: "25th Oct",
+      title: "Python",
+      date: "30th Octber",
       image:
         "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
     },
     {
       id: "2",
-      title: "WORKSHOP 2",
-      date: "25th Oct",
+      title: "Learn 3D Modelling using Fusion 360",
+      date: "30th Octber",
       image:
         "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
     },
     {
       id: "3",
-      title: "WORKSHOP 3",
-      date: "25th Oct",
+      title: "CKT",
+      date: "6th November",
       image:
         "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
     },
     {
       id: "4",
-      title: "WORKSHOP 4",
-      date: "25th Oct",
+      title: "Web Development",
+      date: "6th November",
       image:
         "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
     },
     {
       id: "5",
-      title: "WORKSHOP 5",
-      date: "25th Oct",
+      title: "Machine Learning - A project based approach",
+      date: "7th November",
       image:
         "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
     },
@@ -104,7 +104,7 @@ const Home = (props: Props) => {
           {contacts.map((contact) => (
             <ContactCard
               name={contact.name}
-              email={contact.email}
+              // email={contact.email}
               number={contact.number}
             />
           ))}

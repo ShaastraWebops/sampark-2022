@@ -8,9 +8,9 @@
 /********* LANDING PAGE ************/
 .landing-section {
   background-image: url("../Images/landing.png");
-  background-position: center;
+  background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -70,9 +70,9 @@
 /********* ABOUT US ************/
 .about-us {
   background-image: url("../Images/about.png");
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -172,7 +172,7 @@
   display: flex;
   flex: auto;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-evenly;
 }
 

@@ -16,7 +16,7 @@ const WorkshopCard = (props: Props) => {
       <img src={props.image} alt="Workshop" />
       <div className="workshop-heading">
         <p>{props.title}</p>
-        <p>{props.date}</p>
+        <p style={{fontWeight: "normal"}}>{props.date}</p>
       </div>
       <div className="workshop-button">
         <button onClick={() => history.replace(`/workshops/${props.id}`)}>

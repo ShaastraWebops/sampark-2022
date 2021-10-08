@@ -1,4 +1,4 @@
-const oneLiner = `Lorem, ipsum dolor sit amet consectetur adipisicing elit.`;
+const oneLiner = `Where Shaastra meets college`;
 
 const description = `Sampark is an innovative initiative of Shaastra in which college
 students can participate in various workshops to boost up their
@@ -10,36 +10,19 @@ no cost.`;
 
 const contacts = [
   {
-    name: "Janith M S",
-    email: "janithms9920@gmail.com",
-    number: "9944010785",
+    name: "Vishwa",
+    number: "9952180821",
   },
   {
-    name: "Janith M S",
-    email: "janithms9920@gmail.com",
-    number: "9944010785",
-  },
-  {
-    name: "Janith M S",
-    email: "janithms9920@gmail.com",
-    number: "9944010785",
-  },
-  {
-    name: "Janith M S",
-    email: "janithms9920@gmail.com",
-    number: "9944010785",
-  },
-  {
-    name: "Janith M S",
-    email: "janithms9920@gmail.com",
-    number: "9944010785",
-  },
+    name: "Anshid",
+    number: "7592976901",
+  }
 ];
 
 const webOpsTeam = [
   {
     name: "Drishti",
-    number: "9944010785",
+    number: "9518599566",
   },
   {
     name: "Janith M S",
@@ -47,15 +30,11 @@ const webOpsTeam = [
   },
   {
     name: "Krithika",
-    number: "9944010785",
-  },
-  {
-    name: "Tusar",
-    number: "9944010785",
+    number: "8925693976",
   },
   {
     name: "Yogesh",
-    number: "9944010785",
+    number: "9489629652",
   },
 ];
 

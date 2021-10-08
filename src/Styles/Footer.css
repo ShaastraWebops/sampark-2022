@@ -54,6 +54,13 @@
   margin: 10px;
 }
 
+.team-member > a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
 @media only screen and (max-width: 600px) {
   .footer {
     border-radius: 0px 75px 0px 0px;
