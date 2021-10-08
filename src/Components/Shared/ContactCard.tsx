@@ -1,6 +1,5 @@
 import React from "react";
-import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
-import { FaWhatsappSquare } from "@react-icons/all-files/fa/FaWhatsappSquare";
+import { FaWhatsappSquare, FaEnvelope } from "react-icons/fa";
 import "../../Styles/ContactCard.css";
 
 interface Props {

@@ -1,8 +1,5 @@
 import React from "react";
-import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
-import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
-import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import { FaYoutubeSquare } from "@react-icons/all-files/fa/FaYoutubeSquare";
+import { FaEnvelope, FaInstagram, FaLinkedin, FaYoutubeSquare} from "react-icons/fa";
 
 import "../../Styles/Footer.css";
 import { webOpsTeam } from "../../Data/Home";
