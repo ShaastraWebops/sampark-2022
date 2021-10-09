@@ -11,6 +11,7 @@
   border-radius: 24px;
   width: 350px;
   height: 200px;
+  object-fit: cover;
 }
 
 .workshop-heading {
@@ -29,27 +30,25 @@
   text-align: center;
   color: #000000;
   margin: 5px 0 0 0;
-  max-width: fit-content;
+  max-width: 290px;
 }
 
-.workshop-button {
+.workshop-buttons {
   display: flex;
-  padding: 0 30px;
-  margin: 5px 0 0 0;
+  margin: 5px 0 20px 0;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: space-evenly;
   height: 50px;
 }
 
-.workshop-button > button {
+.workshop-button {
   background: #ff6363;
   border-radius: 24px;
   border: none;
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 16px;
   color: #ffffff;
   padding: 10px;
 }

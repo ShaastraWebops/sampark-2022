@@ -13,7 +13,6 @@ import { webOpsTeam } from "../../Data/Home";
 interface Props {}
 
 const Footer = (props: Props) => {
-  console.log(window.innerWidth);
   return (
     <div className="footer">
       <div className="social-links">

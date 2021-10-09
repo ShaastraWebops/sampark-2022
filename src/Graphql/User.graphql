@@ -1,0 +1,21 @@
+mutation Login($loginData: LoginInput!) {
+  login(data: $loginData) {
+    name
+    id
+    spID
+    email
+    role
+  }
+}
+
+mutation Logout {
+  logoutUser
+}
+
+query GetUsersCount {
+  getUsersCount
+}
+
+query GetUsersDataCSV {
+  getUsersDataCSV
+}

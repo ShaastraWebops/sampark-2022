@@ -43,6 +43,8 @@
   font-size: 1.2em;
   text-decoration: none;
   color: #ffffff;
+  text-align: center;
+  margin: 5px 0;
 }
 
 .nav-links > a:hover {

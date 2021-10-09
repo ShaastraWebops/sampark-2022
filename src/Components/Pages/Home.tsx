@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../Shared/Navbar";
 import Title from "../Shared/Title";
 import Footer from "../Shared/Footer";
-import ContactCard from "../Shared/ContactCard";
+import ContactCard from "../Cards/ContactCard";
 import Collage from "../../Images/collage.png";
 import CSS from "../../Images/css.png";
 import CPP from "../../Images/cpp.png";
@@ -10,48 +10,47 @@ import Python from "../../Images/python.png";
 import JS from "../../Images/js.png";
 import { contacts, description, oneLiner } from "../../Data/Home";
 import "../../Styles/Home.css";
-import WorkshopCard from "../Shared/WorkshopCard";
+import WorkshopCard from "../Cards/WorkshopCard";
+import {
+  useGetWorkshopsQuery,
+  useLoginMutation,
+  UserRole,
+} from "../../generated/graphql";
+import { useContext } from "react";
+import AuthContext from "../../Utils/contexts";
+import Admin from "../Cards/Admin";
 
 interface Props {}
 
 const Home = (props: Props) => {
-  const workshops = [
-    {
-      id: "1",
-      title: "Python",
-      date: "30th Octber",
-      image:
-        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
-    },
-    {
-      id: "2",
-      title: "Learn 3D Modelling using Fusion 360",
-      date: "30th Octber",
-      image:
-        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
-    },
-    {
-      id: "3",
-      title: "CKT",
-      date: "6th November",
-      image:
-        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
-    },
-    {
-      id: "4",
-      title: "Web Development",
-      date: "6th November",
-      image:
-        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
-    },
-    {
-      id: "5",
-      title: "Machine Learning - A project based approach",
-      date: "7th November",
-      image:
-        "https://bulkmailattachments.s3.ap-southeast-1.amazonaws.com/Online+scavenger+hunt+poster+Shaastra+junior-02+(1).jpg",
-    },
-  ];
+  const { setRole, role } = useContext(AuthContext)!;
+
+  const [loginMutation, { data: loginData, error: loginError }] =
+    useLoginMutation({
+      variables: {
+        loginData: {
+          email: "webops@shaastra.org",
+          password: "test1234",
+        },
+      },
+    });
+
+  if (loginData) {
+    setRole(loginData.login?.role!);
+    localStorage.setItem("email", loginData.login?.email!);
+    localStorage.setItem("name", loginData.login?.name!);
+    localStorage.setItem("role", loginData.login?.role!);
+    localStorage.setItem("spID", loginData.login?.spID!);
+  }
+
+  if (loginError) {
+    console.log(loginError);
+  }
+
+  const { data, loading, error } = useGetWorkshopsQuery();
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div className="home">
@@ -62,7 +61,12 @@ const Home = (props: Props) => {
         <div className="sampark-title">SAMPARK</div>
         <div className="sampark-title">2021</div>
         <div className="sampark-one-line">{oneLiner}</div>
-        <button className="home-register">REGISTER NOW</button>
+        {!role && (
+          <button className="home-register" onClick={() => loginMutation()}>
+            REGISTER NOW
+          </button>
+        )}
+        {role === UserRole.Admin && <Admin />}
       </div>
 
       {/** ABOUT US **/}
@@ -86,12 +90,13 @@ const Home = (props: Props) => {
       <div id="workshops" className="workshops">
         <Title title="WORKSHOPS" isHomePage={true} />
         <div className="workshops-list">
-          {workshops.map((workshop) => (
+          {data?.getWorkshops.workshops.map((workshop) => (
             <WorkshopCard
               id={workshop.id}
               title={workshop.title}
-              date={workshop.date}
-              image={workshop.image}
+              date={workshop.workshopDate}
+              image={workshop.pic}
+              registrationCloseTime={workshop.registrationCloseTime}
             />
           ))}
         </div>

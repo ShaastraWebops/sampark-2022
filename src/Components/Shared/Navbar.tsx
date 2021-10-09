@@ -1,19 +1,39 @@
 import React, { Fragment } from "react";
+import { useContext } from "react";
+import { UserRole } from "../../generated/graphql";
 import Profile from "../../Images/profile.png";
 import Shaastra from "../../Images/shaastra.png";
 import "../../Styles/Navbar.css";
+import AuthContext from "../../Utils/contexts";
 
 interface Props {}
 
 const Navbar = (props: Props) => {
-  const { name, spId } = { name: "Janith M S", spId: "S22SP0001" };
+  const { role } = useContext(AuthContext)!;
   const [isMenuON, setIsMenuON] = React.useState<boolean>(false);
 
   const navAuth = (
     <Fragment>
-      <a href="/login" className="nav-link">
-        LOGIN / REGISTER
-      </a>
+      {!role && (
+        <a href="/login" className="nav-link" style={{ minWidth: "150px" }}>
+          LOGIN
+        </a>
+      )}
+      {!role && (
+        <a href="/register" className="nav-link" style={{ minWidth: "150px" }}>
+          REGISTER
+        </a>
+      )}
+      {role && (
+        <a href="/profile" className="nav-link" style={{ minWidth: "150px" }}>
+          PROFILE
+        </a>
+      )}
+      {role && (
+        <a href="/logout" className="nav-link" style={{ minWidth: "150px" }}>
+          LOGOUT
+        </a>
+      )}
     </Fragment>
   );
   const navPage = (
@@ -24,6 +44,9 @@ const Navbar = (props: Props) => {
       <a href="/#workshops" className="nav-link">
         WORKSHOPS
       </a>
+      {role === UserRole.Admin && <a href="/add-workshop" className="nav-link">
+        ADD WORKSHOP
+      </a>}
       <a href="/schedule" className="nav-link">
         SCHEDULE
       </a>
@@ -58,10 +81,14 @@ const Navbar = (props: Props) => {
           {navAuth}
         </div>
       )}
-      <div className="profile-info">
-        <div className="profile-name">HELLO {name}</div>
-        <div className="sampark-id">{spId}</div>
-      </div>
+      {role && (
+        <div className="profile-info">
+          <div className="profile-name">
+            Hello {localStorage.getItem("name")}
+          </div>
+          <div className="sampark-id">{localStorage.getItem("spID")}</div>
+        </div>
+      )}
       {window.innerWidth >= 1000 ? (
         <button
           className="navbar-profile"
@@ -70,7 +97,10 @@ const Navbar = (props: Props) => {
           <img src={Profile} alt="Profile" />
         </button>
       ) : (
-        <button className="hamburger-mobile" onClick={() => setIsMenuON(!isMenuON)}>
+        <button
+          className="hamburger-mobile"
+          onClick={() => setIsMenuON(!isMenuON)}
+        >
           <div className={isMenuON ? "change-bar1" : "bar1"}></div>
           <div className={isMenuON ? "change-bar2" : "bar2"}></div>
           <div className={isMenuON ? "change-bar3" : "bar3"}></div>

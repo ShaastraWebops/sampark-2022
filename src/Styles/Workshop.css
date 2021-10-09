@@ -7,7 +7,7 @@
 .workshop-content {
   display: grid;
   grid-template-columns: auto max-content;
-  grid-template-rows: max-content min-content;
+  grid-template-rows: min-content max-content;
   align-items: flex-start;
   justify-content: space-evenly;
   width: 100%;
@@ -19,7 +19,6 @@
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 3;
-  flex: auto;
   max-width: 60vw;
   background: #626cbe;
   padding: 20px;
@@ -28,7 +27,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 1.3em;
   color: #ffffff;
 }
 
@@ -47,7 +46,7 @@
   border-radius: 24px;
 }
 
-.workshop-details-1 > button {
+.register-button {
   margin-top: 20px;
   background: #ca6682;
   filter: drop-shadow(5px 5px 10px rgba(10, 9, 9, 0.25));
@@ -56,9 +55,9 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
+  font-size: 1.5em;
   color: #ffffff;
-  padding: 5px 20px;
+  padding: 10px 20px;
 }
 
 .workshop-details-2 {
@@ -82,7 +81,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 1.3em;
   color: #ffffff;
   padding: 10px 20px;
 }
@@ -95,7 +94,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 1.5em;
   color: #ffffff;
   text-align: center;
   padding-bottom: 20px;
@@ -127,6 +126,7 @@
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
+    align-items: center;
   }
 
   .workshop-details-1 > img {
@@ -140,10 +140,11 @@
     grid-column-end: 2;
     grid-row-start: 3;
     grid-row-end: 4;
+    /* align-items: center; */
   }
 
   .workshop-date {
-      margin-top: 0;
+    margin-top: 0;
   }
 }
 
@@ -155,15 +156,19 @@
 
   .workshop-date,
   .workshop-deadline,
-  .workshop-contacts-list,
-  .workshop-details-1 > button {
+  .workshop-contacts-list {
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 1em;
   }
 
   .workshop-contacts-list-heading,
   .workshop-details-1 > button {
-    font-size: 30px;
+    font-size: 1.25em;
+  }
+
+  .workshop-details-1,
+  .workshop-details-2 {
+    width: 90vw;
   }
 }
