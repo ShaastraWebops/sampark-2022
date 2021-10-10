@@ -35,9 +35,7 @@ function ResendEmail() {
                 />
               </div>
             </div>
-            <div>
-              <button>Log In</button>
-            </div>
+            <button className="auth-button">Resend email</button>
           </div>
         </form>
       </div>

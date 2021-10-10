@@ -35,9 +35,7 @@ function ForgotPassword() {
                 />
               </div>
             </div>
-            <div>
-              <button>Log In</button>
-            </div>
+            <button className="auth-button">Send link to reset password</button>
           </div>
         </form>
       </div>

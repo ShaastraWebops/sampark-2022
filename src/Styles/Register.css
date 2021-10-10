@@ -19,11 +19,12 @@
   justify-content: center;
   background-color: rgba(0, 2, 114, 0.6);
   border-radius: 3px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 .Registerform .Main {
   display: flex;
   flex-direction: row;
+  margin: auto;
   justify-content: center;
 }
 .Registerform .Details {
@@ -35,6 +36,9 @@
 }
 .Registerform h2 {
   color: white;
+  text-align: center;
+  /* margin: auto;
+  width: fit-content; */
 }
 .rowflex {
   display: flex;
@@ -69,8 +73,11 @@
   flex: 50%;
 }
 .auth-button {
-  height: 2vw;
+  height: fit-content;
+  padding: 1vh;
   width: 20vh;
+  margin: auto;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -114,9 +121,208 @@
   margin-left: 5%;
   width: 80%;
 }
-
+@media screen and (max-width:1300px)
+{
+  .Registerform .Details
+  {
+    padding: 2vw 1vw;
+  }
+  .Registerform select 
+  {
+    height: fit-content;
+    padding: 1vh;
+    align-self: center;
+  }
+}
+@media screen and (max-width: 1100px)
+{
+  .Registerform .box
+  {
+    width: 80vw;
+  }
+  .Registerform h2
+  {
+   padding: 0 4vw;
+  }
+  .Registerform .Details
+  {
+    padding: 3vw;
+    width: 90%;
+    justify-content: space-evenly;
+  }
+  .Userdetail
+  {
+    height: 60%;
+  }
+  .Main
+  {
+    height: fit-content;
+  }
+  .auth-button
+  {
+    /* width: 100vw; */
+    height: 3vh;
+    margin-bottom: 3vh;
+  }
+  .rowflex label, .Registerform label
+  {
+    width: 40%;
+    margin-right: 0%;
+  }
+  .rowflex input 
+  {
+    width: 15vw;
+    height: 2vh;
+    justify-self: center;
+    align-self: center;
+  }
+  .rowflex select 
+  {
+    width: 60%;
+    height: fit-content;
+    padding: 0.5vh;
+    justify-self: center;
+    align-self: center;
+  }
+  .rowflex
+  {
+    justify-content: space-around;
+    padding: 0 4vw;
+  }
+  .rowflex .Catogories
+  {
+    width: 25%;
+    justify-content: center;
+  }
+  .rowflex label
+  {
+    width: 50%;
+    margin-right: 12px;
+    justify-self: flex-start;
+  }
+  .second 
+  {
+    padding: 0%;
+  }
+}
 @media screen and (max-width: 980px) {
   .Userdetail {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 800px)
+{
+  .Registerform
+  {
+    width: 100vw;
+    overflow-x: hidden;
+    height: fit-content;
+  }
+  .Registerform .Details
+  {
+    width: 80%;
+  }
+  .Registerform .rowflex
+  {
+    flex-direction: column;
+  }
+  .rowflex select {
+    border: white;
+    border-radius: 4px;
+    width: 70%;
+    height: fit-content;
+    margin-bottom: 5px;
+  }
+  .rowflex .Catogories {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: right;
+    margin-bottom: 5px;
+  }
+  .rowflex input 
+  {
+    width: 80%;
+  }
+  .rowflex
+  {
+    padding: 0%;
+  }
+}
+@media screen and (max-width: 600px)
+{
+  .Registerform
+  {
+    width: 100vw;
+    overflow-x: hidden;
+    height: 130vh;
+  }
+  .Registerform .box
+  {
+    width: 100vw;
+  }
+  .Registerform .rowflex
+  {
+    flex-direction: column;
+  }
+  .rowflex select {
+    border: white;
+    border-radius: 4px;
+    width: 70%;
+    margin-bottom: 5px;
+  }
+  .rowflex label, .Registerform label
+  {
+    width: 40%;
+    margin-right: 0%;
+  }
+  .rowflex .Catogories {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: right;
+    margin-bottom: 5px;
+  }
+  .auth-button
+  {
+    /* width: 100vw; */
+    height: 6vh;
+  }
+}
+
+@media screen and (max-width: 400px)
+{
+  .StateName, .CityName
+  {
+    width: 80%;
+  }
+  .Details
+  {
+    width: 100vw;
+  }
+  .Userdetail
+  {
+    width: 112vw;
+    padding: 0;
+  }
+  .Registerform .box
+  {
+    padding: 1vw;
+  }
+  .Registerform input, .Registerform select
+  {
+    width: 50vw !important;
+  }
+  .rowflex label 
+  {
+    justify-self: flex-start;
+  }
+  .rowflex .Catogories
+  {
+    justify-content: space-between;
+  }
+  .Registerform
+  {
+    text-align: left;
   }
 }

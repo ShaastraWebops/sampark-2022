@@ -20,6 +20,7 @@ function App() {
   const { role } = useContext(AuthContext)!;
   return (
     <Router>
+      <Route exact path="/" component={Home} />
       <Route exact path="/workshop/:id" component={Workshop} />
       <Route exact path="/help-desk" component={Workshop} />
       <Route exact path="/schedule" component={Schedule} />
@@ -50,7 +51,6 @@ function App() {
       <Route exact path="/edit-workshop/:id">
         {role === UserRole.Admin ? <EditWorkshop /> : <Redirect to="/" />}
       </Route>
-      <Route exact path="/" component={Home} />
     </Router>
   );
 }

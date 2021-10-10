@@ -90,7 +90,7 @@ const Home = (props: Props) => {
       <div id="workshops" className="workshops">
         <Title title="WORKSHOPS" isHomePage={true} />
         <div className="workshops-list">
-          {data?.getWorkshops.workshops.map((workshop) => (
+          {data?.getWorkshops.workshops.map((workshop:any) => (
             <WorkshopCard
               id={workshop.id}
               title={workshop.title}

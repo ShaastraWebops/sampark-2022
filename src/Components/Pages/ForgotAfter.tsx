@@ -35,9 +35,7 @@ function ForgotAfter() {
                 />
               </div>
             </div>
-            <div>
-              <button>Log In</button>
-            </div>
+            <button className="auth-button">Reset password</button>
           </div>
         </form>
       </div>
