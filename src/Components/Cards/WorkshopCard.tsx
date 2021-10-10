@@ -32,7 +32,7 @@ const WorkshopCard = (props: Props) => {
       </div>
       <div className="workshop-buttons">
         <button
-          onClick={() => history.replace(`/workshops/${props.id}`)}
+          onClick={() => history.replace(`/workshop/${props.id}`)}
           className="workshop-button"
         >
           VIEW DETAILS
@@ -45,7 +45,12 @@ const WorkshopCard = (props: Props) => {
           />
         )}
         {role === UserRole.Admin && (
-          <button className="workshop-button">EDIT WORKSHOP</button>
+          <button
+            className="workshop-button"
+            onClick={() => history.replace(`/edit-workshop/${props.id}`)}
+          >
+            EDIT WORKSHOP
+          </button>
         )}
       </div>
     </div>

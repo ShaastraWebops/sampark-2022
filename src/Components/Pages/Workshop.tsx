@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
+import parse from 'html-react-parser';
 import { useGetWorkshopQuery, UserRole } from "../../generated/graphql";
 import "../../Styles/Workshop.css";
 import AuthContext from "../../Utils/contexts";
@@ -8,6 +9,7 @@ import AdminWorkshop from "../Cards/AdminWorkshop";
 import Register from "../Cards/Register";
 import Navbar from "../Shared/Navbar";
 import Title from "../Shared/Title";
+import { converter } from "../Form/WorkshopForm";
 
 interface Props {}
 
@@ -19,14 +21,12 @@ const Workshop = (props: Props) => {
       workshopId: id,
     },
   });
-  const { contacts } = {
-    contacts:
-      '{"name":"Janith M S", "email": "janithms9920@gmail.com", "number":"9944010785"} AND {"name":"Janith M S", "email": "janithms9920@gmail.com", "number":"9944010785"} AND {"name":"Janith M S", "email": "janithms9920@gmail.com", "number":"9944010785"}',
-  };
+
   const currentTime = Date.now();
   const currentEpochTime = new Date(currentTime).getTime();
   const isRegistrationClosed =
     currentEpochTime > parseInt(data?.getWorkshop.registrationCloseTime!);
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
   return (
@@ -38,7 +38,7 @@ const Workshop = (props: Props) => {
       )}
       <div className="workshop-content">
         <div className="workshop-description">
-          {data?.getWorkshop.description}
+          {parse(converter.makeHtml(data?.getWorkshop.description!))}
         </div>
         <div className="workshop-details-1">
           <img
@@ -76,12 +76,14 @@ const Workshop = (props: Props) => {
                 fontWeight: "normal",
               }}
             >
-              {data?.getWorkshop.registrationCloseTime}
+              {new Date(
+                parseInt(data?.getWorkshop.registrationCloseTime!)
+              ).toLocaleString()}
             </div>
           </div>
           <div className="workshop-contacts-list">
             <div className="workshop-contacts-list-heading">CONTACT US</div>
-            {contacts.split(" AND ").map((contact) => {
+            {data?.getWorkshop.contact.split(" AND ").map((contact) => {
               const parsedContact = JSON.parse(contact);
               return (
                 <div className="workshop-contact">

@@ -366,6 +366,13 @@ export type RegisterMutationVariables = Exact<{
 
 export type RegisterMutation = { register: boolean };
 
+export type CreateWorkshopMutationVariables = Exact<{
+  createWorkshopData: CreateWorkshopInput;
+}>;
+
+
+export type CreateWorkshopMutation = { createWorkshop: { id: string } };
+
 export type EditWorkshopMutationVariables = Exact<{
   editWorkshopWorkshopId: Scalars['String'];
   data: EditWorkshopInput;
@@ -681,6 +688,39 @@ export function useRegisterMutation(baseOptions?: ApolloReactHooks.MutationHookO
 export type RegisterMutationHookResult = ReturnType<typeof useRegisterMutation>;
 export type RegisterMutationResult = ApolloReactCommon.MutationResult<RegisterMutation>;
 export type RegisterMutationOptions = ApolloReactCommon.BaseMutationOptions<RegisterMutation, RegisterMutationVariables>;
+export const CreateWorkshopDocument = gql`
+    mutation CreateWorkshop($createWorkshopData: CreateWorkshopInput!) {
+  createWorkshop(data: $createWorkshopData) {
+    id
+  }
+}
+    `;
+export type CreateWorkshopMutationFn = ApolloReactCommon.MutationFunction<CreateWorkshopMutation, CreateWorkshopMutationVariables>;
+
+/**
+ * __useCreateWorkshopMutation__
+ *
+ * To run a mutation, you first call `useCreateWorkshopMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateWorkshopMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createWorkshopMutation, { data, loading, error }] = useCreateWorkshopMutation({
+ *   variables: {
+ *      createWorkshopData: // value for 'createWorkshopData'
+ *   },
+ * });
+ */
+export function useCreateWorkshopMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<CreateWorkshopMutation, CreateWorkshopMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<CreateWorkshopMutation, CreateWorkshopMutationVariables>(CreateWorkshopDocument, options);
+      }
+export type CreateWorkshopMutationHookResult = ReturnType<typeof useCreateWorkshopMutation>;
+export type CreateWorkshopMutationResult = ApolloReactCommon.MutationResult<CreateWorkshopMutation>;
+export type CreateWorkshopMutationOptions = ApolloReactCommon.BaseMutationOptions<CreateWorkshopMutation, CreateWorkshopMutationVariables>;
 export const EditWorkshopDocument = gql`
     mutation EditWorkshop($editWorkshopWorkshopId: String!, $data: EditWorkshopInput!) {
   editWorkshop(WorkshopID: $editWorkshopWorkshopId, data: $data)

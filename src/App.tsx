@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import "./App.css";
+import AddWorkshop from "./Components/Pages/AddWorkshop";
+import EditWorkshop from "./Components/Pages/EditWorkshop";
 import Home from "./Components/Pages/Home";
 import Logout from "./Components/Pages/Logout";
 import Schedule from "./Components/Pages/Schedule";
@@ -10,11 +12,9 @@ import AuthContext from "./Utils/contexts";
 
 function App() {
   const { role } = useContext(AuthContext)!;
-  console.log(!role);
-  console.log(role === "ADMIN");
   return (
     <Router>
-      <Route exact path="/workshops/:id" component={Workshop} />
+      <Route exact path="/workshop/:id" component={Workshop} />
       <Route exact path="/help-desk" component={Workshop} />
       <Route exact path="/schedule" component={Schedule} />
       <Route exact path="/login">
@@ -30,7 +30,10 @@ function App() {
         {!!role ? <Schedule /> : <Redirect to="/login" />}
       </Route>
       <Route exact path="/add-workshop">
-        {role === UserRole.Admin ? <Schedule /> : <Redirect to="/" />}
+        {role === UserRole.Admin ? <AddWorkshop /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/edit-workshop/:id">
+        {role === UserRole.Admin ? <EditWorkshop /> : <Redirect to="/" />}
       </Route>
       <Route exact path="/" component={Home} />
     </Router>

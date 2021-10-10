@@ -31,6 +31,12 @@ mutation Register($registerWorkshopId: String!) {
   register(WorkshopID: $registerWorkshopId)
 }
 
+mutation CreateWorkshop($createWorkshopData: CreateWorkshopInput!) {
+  createWorkshop(data: $createWorkshopData) {
+    id
+  }
+}
+
 mutation EditWorkshop(
   $editWorkshopWorkshopId: String!
   $data: EditWorkshopInput!

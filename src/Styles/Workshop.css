@@ -7,7 +7,7 @@
 .workshop-content {
   display: grid;
   grid-template-columns: auto max-content;
-  grid-template-rows: min-content max-content;
+  grid-template-rows: max-content min-content;
   align-items: flex-start;
   justify-content: space-evenly;
   width: 100%;
@@ -42,8 +42,9 @@
 }
 
 .workshop-details-1 > img {
-  height: 45vh;
-  border-radius: 24px;
+  /* height: 45vh; */
+  max-width: 30vw;
+  border-radius: 10px;
 }
 
 .register-button {
@@ -130,7 +131,7 @@
   }
 
   .workshop-details-1 > img {
-    width: auto;
+    max-width: 80vw;
     margin: 0 30px;
   }
 
