@@ -45,7 +45,7 @@ function Login() {
               </div>
             </div>
             <div>
-              <button>Log In</button>
+              <button className="auth-button">Log In</button>
             </div>
           </div>
         </form>

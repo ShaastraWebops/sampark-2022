@@ -186,7 +186,7 @@ function Register() {
                 </div>
               </div>
             </div>
-            <button>REGISTER</button>
+            <button className="auth-button">REGISTER</button>
           </div>
         </form>
       </div>

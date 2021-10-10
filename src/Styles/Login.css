@@ -57,7 +57,7 @@ h2 {
   border-radius: 5px;
   border: white;
 }
-button {
+.auth-button {
   align-content: center;
   background-color: #08095a;
   color: white;

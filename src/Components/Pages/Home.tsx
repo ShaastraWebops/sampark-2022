@@ -50,7 +50,7 @@ const Home = (props: Props) => {
   const { data, loading, error } = useGetWorkshopsQuery();
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (error) return <p>{error.message}</p>;
 
   return (
     <div className="home">
