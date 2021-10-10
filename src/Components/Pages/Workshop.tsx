@@ -6,7 +6,7 @@ import { useGetWorkshopQuery, UserRole } from "../../generated/graphql";
 import "../../Styles/Workshop.css";
 import AuthContext from "../../Utils/contexts";
 import AdminWorkshop from "../Cards/AdminWorkshop";
-import Register from "../Cards/Register";
+import RegisterButton from "../Cards/RegisterButton";
 import Navbar from "../Shared/Navbar";
 import Title from "../Shared/Title";
 import { converter } from "../Form/WorkshopForm";
@@ -47,7 +47,7 @@ const Workshop = (props: Props) => {
             alt="Workshop"
           />
           {role === UserRole.User && (
-            <Register
+            <RegisterButton
               className="register-button"
               id={data?.getWorkshop.id!}
               isClosed={isRegistrationClosed}

@@ -6,7 +6,7 @@ import {
   useIsRegisteredQuery,
   useRegisterMutation,
 } from "../../generated/graphql";
-import "../../Styles/Register.css";
+import "../../Styles/RegisterButton.css";
 import Popup from "./Popup";
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
   className: string;
 }
 
-const Register = (props: Props) => {
+const RegisterButton = (props: Props) => {
   const [showRegisterPopup, setShowRegisterPopup] = useState<boolean>(false);
 
   const { data } = useIsRegisteredQuery({
@@ -124,4 +124,4 @@ const Register = (props: Props) => {
     );
 };
 
-export default Register;
+export default RegisterButton;

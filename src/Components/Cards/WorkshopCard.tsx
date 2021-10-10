@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { UserRole } from "../../generated/graphql";
 import "../../Styles/WorkshopCard.css";
 import AuthContext from "../../Utils/contexts";
-import Register from "./Register";
+import RegisterButton from "./RegisterButton";
 
 interface Props {
   id: string;
@@ -38,7 +38,7 @@ const WorkshopCard = (props: Props) => {
           VIEW DETAILS
         </button>
         {role === UserRole.User && (
-          <Register
+          <RegisterButton
             id={props.id}
             className="workshop-button"
             isClosed={isRegistrationClosed}
