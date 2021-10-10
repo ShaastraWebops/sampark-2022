@@ -1,6 +1,6 @@
 import React from "react";
-import "../Styles/ForgotPassword.css";
-import "../Styles/Login.css";
+import "../../Styles/ForgotPassword.css";
+import "../../Styles/Login.css";
 import { useState } from "react";
 
 function ResendEmail() {

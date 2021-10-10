@@ -83,7 +83,7 @@ function Register() {
                       </select>
                   </div>
                 </div>
-                <div className="rowflex">
+                <div className="rowflex second">
                   <div className="Catogories">
                     <label htmlFor="state">STATE</label>
                     <select
