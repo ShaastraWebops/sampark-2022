@@ -3,8 +3,8 @@ import "../Styles/ForgotPassword.css";
 import "../Styles/Login.css";
 import { useState } from "react";
 
-function ForgotPassword() {
-  const [email, setEmail] = useState("");
+function ForgotAfter() {
+  const [pw, setPw] = useState("");
   return (
     <div className="Loginform">
       <div className="box">
@@ -22,16 +22,16 @@ function ForgotPassword() {
           <div className="Userinfo">
             <div className="Useralign">
               <div className="info">
-                <label htmlFor="email">EMAIL ID:</label>
+                <label htmlFor="pw">NEW PASSWORD:</label>
               </div>
               <div className="divid">
                 <input
                 required
-                  type="email"
+                  type="password"
+                  name="pw"
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    setPw(e.target.value);
                   }}
-                  name="email"
                 />
               </div>
             </div>
@@ -44,4 +44,5 @@ function ForgotPassword() {
     </div>
   );
 }
-export default ForgotPassword;
+
+export default ForgotAfter;

@@ -22,11 +22,12 @@ function Login() {
           <div className="Userinfo">
             <div className="Useralign">
               <div className="info">
-                <label>EMAIL ID:</label>
-                <label>PASSWORD:</label>
+                <label htmlFor="email">EMAIL ID:</label>
+                <label htmlFor="password">PASSWORD:</label>
               </div>
               <div className="divid">
                 <input
+                required
                   type="email"
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -34,6 +35,7 @@ function Login() {
                   name="email"
                 />
                 <input
+                required
                   type="password"
                   onChange={(e) => {
                     setPw(e.target.value);
