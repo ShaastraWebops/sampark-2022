@@ -13,44 +13,22 @@ import "../../Styles/Home.css";
 import WorkshopCard from "../Cards/WorkshopCard";
 import {
   useGetWorkshopsQuery,
-  useLoginMutation,
   UserRole,
 } from "../../generated/graphql";
 import { useContext } from "react";
 import AuthContext from "../../Utils/contexts";
 import Admin from "../Cards/Admin";
+import { useHistory } from "react-router-dom";
 
 interface Props {}
 
 const Home = (props: Props) => {
-  const { setRole, role } = useContext(AuthContext)!;
+  const { role } = useContext(AuthContext)!;
+  const history = useHistory();
 
-  const [loginMutation, { data: loginData, error: loginError }] =
-    useLoginMutation({
-      variables: {
-        loginData: {
-          email: "webops@shaastra.org",
-          password: "test1234",
-        },
-      },
-    });
-
-  if (loginData) {
-    setRole(loginData.login?.role!);
-    localStorage.setItem("email", loginData.login?.email!);
-    localStorage.setItem("name", loginData.login?.name!);
-    localStorage.setItem("role", loginData.login?.role!);
-    localStorage.setItem("spID", loginData.login?.spID!);
-  }
-
-  if (loginError) {
-    console.log(loginError);
-  }
-
-  const { data, loading, error } = useGetWorkshopsQuery();
+  const { data, loading } = useGetWorkshopsQuery();
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error.message}</p>;
 
   return (
     <div className="home">
@@ -62,7 +40,10 @@ const Home = (props: Props) => {
         <div className="sampark-title">2021</div>
         <div className="sampark-one-line">{oneLiner}</div>
         {!role && (
-          <button className="home-register" onClick={() => loginMutation()}>
+          <button
+            className="home-register"
+            onClick={() => history.push("/register")}
+          >
             REGISTER NOW
           </button>
         )}
@@ -87,31 +68,29 @@ const Home = (props: Props) => {
       </div>
 
       {/** WORKSHOPS **/}
-      <div id="workshops" className="workshops">
-        <Title title="WORKSHOPS" isHomePage={true} />
-        <div className="workshops-list">
-          {data?.getWorkshops.workshops.map((workshop:any) => (
-            <WorkshopCard
-              id={workshop.id}
-              title={workshop.title}
-              date={workshop.workshopDate}
-              image={workshop.pic}
-              registrationCloseTime={workshop.registrationCloseTime}
-            />
-          ))}
+      {data && (
+        <div id="workshops" className="workshops">
+          <Title title="WORKSHOPS" isHomePage={true} />
+          <div className="workshops-list">
+            {data?.getWorkshops.workshops.map((workshop: any) => (
+              <WorkshopCard
+                id={workshop.id}
+                title={workshop.title}
+                date={workshop.workshopDate}
+                image={workshop.pic}
+                registrationCloseTime={workshop.registrationCloseTime}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/** CONTACT US **/}
       <div id="contact" className="contact-us">
         <Title title="CONTACT US" isHomePage={true} />
         <div className="contacts-list">
           {contacts.map((contact) => (
-            <ContactCard
-              name={contact.name}
-              // email={contact.email}
-              number={contact.number}
-            />
+            <ContactCard name={contact.name} number={contact.number} />
           ))}
         </div>
         <Footer />

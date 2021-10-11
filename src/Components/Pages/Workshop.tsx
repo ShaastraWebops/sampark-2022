@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
-import parse from 'html-react-parser';
+import { useHistory, useParams } from "react-router-dom";
+import parse from "html-react-parser";
 import { useGetWorkshopQuery, UserRole } from "../../generated/graphql";
 import "../../Styles/Workshop.css";
 import AuthContext from "../../Utils/contexts";
@@ -10,12 +10,14 @@ import RegisterButton from "../Cards/RegisterButton";
 import Navbar from "../Shared/Navbar";
 import Title from "../Shared/Title";
 import { converter } from "../Form/WorkshopForm";
+import Popup from "../Cards/Popup";
 
 interface Props {}
 
 const Workshop = (props: Props) => {
   const { id } = useParams<{ id: string }>();
   const { role } = useContext(AuthContext)!;
+  const history = useHistory();
   const { data, loading, error } = useGetWorkshopQuery({
     variables: {
       workshopId: id,
@@ -28,7 +30,14 @@ const Workshop = (props: Props) => {
     currentEpochTime > parseInt(data?.getWorkshop.registrationCloseTime!);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (error)
+    return (
+      <Popup
+        message={"Some Error Occured"}
+        close={() => history.push("/")}
+        popupType={"ERROR"}
+      />
+    );
   return (
     <div className="workshop" id="top">
       <Navbar />

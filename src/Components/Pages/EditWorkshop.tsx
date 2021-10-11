@@ -72,7 +72,7 @@ const EditWorkshop = (probs: Probs) => {
     contact
       .split(" AND ")
       .forEach((con: string) => contacts.push(JSON.parse(con)));
-    console.log(contacts);
+
     return (
       <div
         style={{

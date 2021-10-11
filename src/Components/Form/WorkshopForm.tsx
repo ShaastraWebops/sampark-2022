@@ -46,7 +46,6 @@ const WorkshopForm = (probs: Probs) => {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
         setUrl(data.url);
         setSpinner(false);
       })

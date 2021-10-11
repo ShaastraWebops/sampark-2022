@@ -3,11 +3,13 @@ import { useHistory } from "react-router";
 import { useContext } from "react";
 import AuthContext from "../../Utils/contexts";
 import { useLogoutMutation } from "../../generated/graphql";
+import Popup from "../Cards/Popup";
+import { useEffect } from "react";
 
 const Logout = () => {
-  const { setRole } = useContext(AuthContext)!
+  const { setRole } = useContext(AuthContext)!;
   const [logoutUserMutation, { data, loading, error }] = useLogoutMutation();
-  const history = useHistory()
+  const history = useHistory();
 
   const logoutHandler = async () => {
     try {
@@ -17,47 +19,45 @@ const Logout = () => {
     }
   };
 
-  logoutHandler();
+  useEffect(() => {
+    logoutHandler();
+  },[]);
 
-  if (loading) return <p>Loading...</p> //return <Dialog open={true} ><p>Loading...</p></Dialog>;
-  if (error) return <p>{error}</p>
-//   {
-//     const closeHandler= () => {window.location.reload()}
-//     return(
-//       <Dialog onClose={closeHandler} open={true} >
-//           <p>Some error occurred</p>
-//           <button onClick={closeHandler}>Close</button>
-//       </Dialog>
-//   );}
-  if (data) {
-    if (data.logoutUser) {
-      localStorage.removeItem("name");
-      localStorage.removeItem("email");
-      localStorage.removeItem("role");
-      localStorage.removeItem("spID");
-      const closeHandler= () => {
-        history.push('/');
-        setRole("")
-      }
-      return(
-        // <Dialog onClose={closeHandler} open={true} >
-        <div>
-            <p>Logout successful.</p>
-            <button onClick={closeHandler}>Close</button>
-            </div>
-        // </Dialog>
-    );}
-    {
-      const closeHandler= () => {history.push('/')}
-      return(
-        // <Dialog onClose={closeHandler} open={true} >
-        <div>
-            <p>Some error occurred</p>
-            <button onClick={closeHandler}>Close</button>
-            </div>
-        // </Dialog>
-    );}
-  } else return <p>Loading...</p>// return <Dialog open={true} ><p>Loading...</p></Dialog>;
+  if (loading) return <p>Loading...</p>;
+
+  if (error)
+    return (
+      <Popup
+        message={"Some error occurred"}
+        close={() => history.push("/")}
+        popupType={"ERROR"}
+      />
+    );
+
+  if (data?.logoutUser) {
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    localStorage.removeItem("role");
+    localStorage.removeItem("spID");
+    const closeHandler = () => {
+      history.push("/");
+      setRole("");
+    };
+    return (
+      <Popup
+        message={"Logout Successful"}
+        close={closeHandler}
+        popupType={"SUCCESS"}
+      />
+    );
+  } else
+    return (
+      <Popup
+        message={"Some error occurred"}
+        close={() => history.push("/")}
+        popupType={"ERROR"}
+      />
+    );
 };
 
 export default Logout;

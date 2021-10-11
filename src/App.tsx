@@ -11,10 +11,11 @@ import { UserRole } from "./generated/graphql";
 import AuthContext from "./Utils/contexts";
 import Login from "./Components/Pages/Login";
 import ForgotPassword from "./Components/Pages/ForgotPassword";
-import ForgotAfter from "./Components/Pages/ForgotAfter";
+import ResetPassword from "./Components/Pages/ResetPassword";
 import ResendEmail from "./Components/Pages/ResendEmail";
 import Profile from "./Components/Pages/Profile";
 import Register from "./Components/Pages/Register";
+import Verify from "./Components/Pages/Verify";
 
 function App() {
   const { role } = useContext(AuthContext)!;
@@ -22,7 +23,7 @@ function App() {
     <Router>
       <Route exact path="/" component={Home} />
       <Route exact path="/workshop/:id" component={Workshop} />
-      <Route exact path="/help-desk" component={Workshop} />
+      <Route exact path="/help-desk" component={Schedule} />
       <Route exact path="/schedule" component={Schedule} />
       <Route exact path="/login">
         {!role ? <Login /> : <Redirect to="/" />}
@@ -30,13 +31,16 @@ function App() {
       <Route exact path="/register">
         {!role ? <Register /> : <Redirect to="/" />}
       </Route>
-      <Route exact path="/forgotpassword">
+      <Route exact path="/verify/:token">
+        {!role ? <Verify /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/forgot-password">
         {!role ? <ForgotPassword /> : <Redirect to="/" />}
       </Route>
-      <Route exact path="/passwordreset">
-        {!role ? <ForgotAfter /> : <Redirect to="/" />}
+      <Route exact path="/reset-password/:token">
+        {!role ? <ResetPassword /> : <Redirect to="/" />}
       </Route>
-      <Route exact path="/resendemail">
+      <Route exact path="/resend-email">
         {!role ? <ResendEmail /> : <Redirect to="/" />}
       </Route>
       <Route exact path="/logout">
