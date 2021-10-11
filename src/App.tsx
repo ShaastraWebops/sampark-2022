@@ -46,9 +46,9 @@ function App() {
       <Route exact path="/logout">
         {!!role ? <Logout /> : <Redirect to="/" />}
       </Route>
-      <Route exact path="/profile">
+      {/* <Route exact path="/profile">
         {!!role ? <Profile /> : <Redirect to="/login" />}
-      </Route>
+      </Route> */}
       <Route exact path="/add-workshop">
         {role === UserRole.Admin ? <AddWorkshop /> : <Redirect to="/" />}
       </Route>

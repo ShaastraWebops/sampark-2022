@@ -29,7 +29,7 @@ const Navbar = (props: Props) => {
           REGISTER
         </NavLink>
       )}
-      {role && (
+      {/* {role && (
         <NavLink
           to="/profile"
           className="nav-link"
@@ -37,7 +37,7 @@ const Navbar = (props: Props) => {
         >
           PROFILE
         </NavLink>
-      )}
+      )} */}
       {role && (
         <NavLink
           to="/logout"
