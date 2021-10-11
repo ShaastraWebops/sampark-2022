@@ -1,0 +1,145 @@
+.Loginform1 {
+  position: relative;
+  background-color: #7abed6;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3% 0 3% 0;
+}
+.MainBox .id {
+  font-weight: bold;
+  margin-top: -1%;
+}
+.MainBox .contents {
+  width: 50%;
+  align-items: center;
+}
+.MainBox h2 {
+  color: #ff6363;
+  margin-left: 5%;
+  margin-bottom: 0%;
+}
+.MainBox p {
+  margin-left: 5%;
+  color: white;
+}
+.MainBox .heading {
+  display: flex;
+  flex-direction: row;
+}
+.MainBox {
+  background-color: rgb(0, 2, 114);
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  height: 80vh;
+  border-radius: 5px;
+  box-shadow: 5px 5px #8888;
+  font-size: large;
+}
+.MainBox img {
+  height: 80vh;
+  width: 50%;
+  border-radius: 5px;
+}
+.topbox {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.space {
+  margin-top: 1%;
+}
+
+.bolde {
+  font-weight: 700;
+  width: 40%;
+}
+.Profile_workshops {
+  margin-top: -1%;
+  align-content: center;
+  background-color: white;
+  height: 45vh;
+  width: 60vw;
+  border-radius: 5px;
+}
+.Profile_workshops h2 {
+  margin-left: 1%;
+}
+
+.Profile_workshops .workshopName {
+  background-color: rgb(0, 2, 114);
+  width: 90%;
+  height: 5vh;
+  border-radius: 5px;
+  color: white;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2%;
+}
+.workshopName p {
+  align-content: center;
+  padding-left: 5%;
+  width: 80%;
+  font-size: larger;
+}
+.workshopName .Date {
+  align-content: flex-end;
+  width: 20%;
+}
+@media screen and (max-width: 720px) {
+  .MainBox {
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    font-size: smaller;
+  }
+  .MainBox img {
+    height: 35vh;
+    width: 100%;
+  }
+  .Profile_workshops {
+    width: 100%;
+  }
+  .Profile_workshops .workshopName {
+    height: fit-content;
+  }
+  .Profile_workshops h2 {
+    font-size: medium;
+  }
+  .workshopName p {
+    font-size: smaller;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1000px) {
+  .MainBox {
+    font-size: small;
+    height: 60vh;
+  }
+  .MainBox img {
+    height: 60vh;
+  }
+}
+@media screen and (max-height: 720px) {
+  .MainBox .contents {
+    width: 80%;
+  }
+}
+@media screen and (min-height: 1024px) {
+  .MainBox {
+    height: 50vh;
+  }
+  .MainBox img {
+    height: 50vh;
+  }
+}
