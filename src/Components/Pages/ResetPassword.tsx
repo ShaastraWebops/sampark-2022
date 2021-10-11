@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useResetPasswordMutation } from "../../generated/graphql";
 import { useHistory, useParams } from "react-router-dom";
 import Popup from "../Cards/Popup";
+import Loader from "../Shared/Loader";
 
 function ResetPassword() {
   const history = useHistory();
@@ -35,7 +36,7 @@ function ResetPassword() {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   if (data?.resetPassword) {
     return (

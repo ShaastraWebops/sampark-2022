@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useReqForgotPassVerificationMutation } from "../../generated/graphql";
 import Popup from "../Cards/Popup";
 import { useHistory } from "react-router-dom";
+import Loader from "../Shared/Loader";
 
 function ForgotPassword() {
   const history = useHistory();
@@ -37,7 +38,7 @@ function ForgotPassword() {
     );
   }
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   if (error) {
     if (error.message.includes("Could not find any entity of type")) {

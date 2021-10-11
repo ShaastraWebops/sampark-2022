@@ -11,6 +11,7 @@ import Navbar from "../Shared/Navbar";
 import Title from "../Shared/Title";
 import { converter } from "../Form/WorkshopForm";
 import Popup from "../Cards/Popup";
+import Loader from "../Shared/Loader";
 
 interface Props {}
 
@@ -29,7 +30,7 @@ const Workshop = (props: Props) => {
   const isRegistrationClosed =
     currentEpochTime > parseInt(data?.getWorkshop.registrationCloseTime!);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error)
     return (
       <Popup

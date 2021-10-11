@@ -5,6 +5,7 @@ import AuthContext from "../../Utils/contexts";
 import { useLoginMutation } from "../../generated/graphql";
 import { useHistory } from "react-router-dom";
 import Popup from "../Cards/Popup";
+import Loader from "../Shared/Loader";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -73,7 +74,7 @@ function Login() {
     }
   }
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   return (
     <div className="Loginform">

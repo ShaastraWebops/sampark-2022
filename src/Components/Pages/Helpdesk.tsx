@@ -15,6 +15,7 @@ import Popup from "../Cards/Popup";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../Utils/contexts";
+import Loader from "../Shared/Loader";
 
 function Helpdesk() {
   const history = useHistory();
@@ -42,8 +43,7 @@ function Helpdesk() {
 
   const [answerFaqMutation] = useAnswerFaqMutation();
 
-  const [deleteFaQsMutation, { data, loading, error }] =
-    useDeleteFaQsMutation();
+  const [deleteFaQsMutation] = useDeleteFaQsMutation();
 
   const FAQSubmitHandler = async (e: any) => {
     e.preventDefault();
@@ -70,7 +70,7 @@ function Helpdesk() {
     );
   }
 
-  if (createFaqLoading || faqLoading) return <p>Loading...</p>;
+  if (createFaqLoading || faqLoading) return <Loader/>;
 
   if (createFaqError)
     return (
@@ -112,7 +112,7 @@ function Helpdesk() {
       <div className="faq">
         {faqData?.getFAQs.faqs
           .filter((item) => {
-            if (faqQuestion == "") {
+            if (faqQuestion === "") {
               return item;
             } else if (
               item.question.toLocaleLowerCase().includes(faqQuestion)
@@ -124,7 +124,6 @@ function Helpdesk() {
             }
           })
           .map((faq, index) => {
-
             const handelSubmit = () => {
               if (!faqAnswer) {
                 if (faq.answer) window.alert("FAQ answer is not edited");
@@ -153,7 +152,7 @@ function Helpdesk() {
                 },
               }).then(() => {
                 window.alert("FAQ Deleted");
-                window.location.reload()
+                window.location.reload();
               });
             };
             return (
@@ -177,7 +176,7 @@ function Helpdesk() {
                     <AiFillCaretDown className="form-icon" />
                   </span>
                 </span>
-                {role == UserRole.Admin ? (
+                {role === UserRole.Admin ? (
                   <span
                     style={
                       click === index

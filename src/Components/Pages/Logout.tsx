@@ -5,6 +5,7 @@ import AuthContext from "../../Utils/contexts";
 import { useLogoutMutation } from "../../generated/graphql";
 import Popup from "../Cards/Popup";
 import { useEffect } from "react";
+import Loader from "../Shared/Loader";
 
 const Logout = () => {
   const { setRole } = useContext(AuthContext)!;
@@ -23,7 +24,7 @@ const Logout = () => {
     logoutHandler();
   },[]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   if (error)
     return (

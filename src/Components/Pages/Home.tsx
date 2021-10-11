@@ -19,6 +19,7 @@ import { useContext } from "react";
 import AuthContext from "../../Utils/contexts";
 import Admin from "../Cards/Admin";
 import { useHistory } from "react-router-dom";
+import Loader from "../Shared/Loader";
 
 interface Props {}
 
@@ -28,7 +29,7 @@ const Home = (props: Props) => {
 
   const { data, loading } = useGetWorkshopsQuery();
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   return (
     <div className="home">

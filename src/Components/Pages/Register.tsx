@@ -2,13 +2,14 @@ import React from "react";
 import "../../Styles/Register.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { cities } from "./cities";
+import { cities } from "../../Data/Cities";
 import {
   Stream,
   useCreateUserMutation,
   YearOfStudy,
 } from "../../generated/graphql";
 import Popup from "../Cards/Popup";
+import Loader from "../Shared/Loader";
 
 function Register() {
   const [email, setEmail] = useState();
@@ -86,7 +87,7 @@ function Register() {
     }
   }
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   if (data?.createUser)
     return (

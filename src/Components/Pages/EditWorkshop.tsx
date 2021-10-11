@@ -7,6 +7,7 @@ import {
   useGetWorkshopQuery,
 } from "../../generated/graphql";
 import WorkshopForm from "../Form/WorkshopForm";
+import Loader from "../Shared/Loader";
 import Navbar from "../Shared/Navbar";
 import Title from "../Shared/Title";
 
@@ -54,7 +55,7 @@ const EditWorkshop = (probs: Probs) => {
     history.push(`/workshop/${id}`);
   }
 
-  if (loading || queryLoading) return <p>Loading...</p>;
+  if (loading || queryLoading) return <Loader/>;
 
   if (error || queryError) return <p>Error Occured</p>;
 

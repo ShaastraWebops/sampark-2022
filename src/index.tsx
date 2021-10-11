@@ -6,12 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 import { ApolloProvider } from "@apollo/client";
 import client from "./Graphql";
 import { AuthContextProvider } from "./Utils/contexts";
+import Loader from "./Components/Shared/Loader";
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthContextProvider>
       <ApolloProvider client={client}>
-        <App />
+        <React.Suspense fallback={<Loader />}>
+          <App />
+        </React.Suspense>
       </ApolloProvider>
     </AuthContextProvider>
   </React.StrictMode>,

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useResendVerificationMailMutation } from "../../generated/graphql";
 import Popup from "../Cards/Popup";
 import { useHistory } from "react-router-dom";
+import Loader from "../Shared/Loader";
 
 function ResendEmail() {
   const [email, setEmail] = useState("");
@@ -59,7 +60,7 @@ function ResendEmail() {
     }
   }
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   if (data?.resendVerificationMail) {
     return (

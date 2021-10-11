@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { useVerifyUserMutation } from "../../generated/graphql";
 import AuthContext from "../../Utils/contexts";
 import Popup from "../Cards/Popup";
+import Loader from "../Shared/Loader";
 
 interface Props {}
 
@@ -33,7 +34,7 @@ const Verify = (props: Props) => {
     verifyHandler();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   if (data?.verifyUser) {
     const loginCloseHandler = () => {

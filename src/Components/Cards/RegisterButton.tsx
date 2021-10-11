@@ -7,6 +7,7 @@ import {
   useRegisterMutation,
 } from "../../generated/graphql";
 import "../../Styles/RegisterButton.css";
+import Loader from "../Shared/Loader";
 import Popup from "./Popup";
 
 interface Props {
@@ -45,7 +46,7 @@ const RegisterButton = (props: Props) => {
     return setShowRegisterPopup(false);
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   if (data?.isRegistered)
     return (

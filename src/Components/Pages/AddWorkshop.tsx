@@ -5,6 +5,7 @@ import {
   useCreateWorkshopMutation,
 } from "../../generated/graphql";
 import WorkshopForm from "../Form/WorkshopForm";
+import Loader from "../Shared/Loader";
 import Navbar from "../Shared/Navbar";
 import Title from "../Shared/Title";
 
@@ -32,7 +33,7 @@ const AddWorkshop = (probs: Probs) => {
     history.push(`/workshop/${data.createWorkshop.id}`);
   }
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader/>;
 
   if (error) return <p>{error.message}</p>;
 
