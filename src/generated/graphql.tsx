@@ -318,6 +318,33 @@ export enum YearOfStudy {
   Third = 'THIRD'
 }
 
+export type CreateFaqMutationVariables = Exact<{
+  question: Scalars['String'];
+}>;
+
+
+export type CreateFaqMutation = { createFAQ: boolean };
+
+export type GetFaQsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFaQsQuery = { getFAQs: { count: number, faqs: Array<{ id: string, question: string, answer?: string | null | undefined, createdOn: string }> } };
+
+export type AnswerFaqMutationVariables = Exact<{
+  answerFaqAnswer: Scalars['String'];
+  answerFaqFaqid: Scalars['String'];
+}>;
+
+
+export type AnswerFaqMutation = { answerFAQ: boolean };
+
+export type DeleteFaQsMutationVariables = Exact<{
+  deleteFAQsFAQID: Scalars['String'];
+}>;
+
+
+export type DeleteFaQsMutation = { deleteFAQs: boolean };
+
 export type LoginMutationVariables = Exact<{
   loginData: LoginInput;
 }>;
@@ -431,6 +458,143 @@ export type ExportCsvQueryVariables = Exact<{
 export type ExportCsvQuery = { exportCSV: string };
 
 
+export const CreateFaqDocument = gql`
+    mutation CreateFAQ($question: String!) {
+  createFAQ(question: $question)
+}
+    `;
+export type CreateFaqMutationFn = ApolloReactCommon.MutationFunction<CreateFaqMutation, CreateFaqMutationVariables>;
+
+/**
+ * __useCreateFaqMutation__
+ *
+ * To run a mutation, you first call `useCreateFaqMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateFaqMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createFaqMutation, { data, loading, error }] = useCreateFaqMutation({
+ *   variables: {
+ *      question: // value for 'question'
+ *   },
+ * });
+ */
+export function useCreateFaqMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<CreateFaqMutation, CreateFaqMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<CreateFaqMutation, CreateFaqMutationVariables>(CreateFaqDocument, options);
+      }
+export type CreateFaqMutationHookResult = ReturnType<typeof useCreateFaqMutation>;
+export type CreateFaqMutationResult = ApolloReactCommon.MutationResult<CreateFaqMutation>;
+export type CreateFaqMutationOptions = ApolloReactCommon.BaseMutationOptions<CreateFaqMutation, CreateFaqMutationVariables>;
+export const GetFaQsDocument = gql`
+    query GetFAQs {
+  getFAQs {
+    count
+    faqs {
+      id
+      question
+      answer
+      createdOn
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFaQsQuery__
+ *
+ * To run a query within a React component, call `useGetFaQsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFaQsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFaQsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFaQsQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetFaQsQuery, GetFaQsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<GetFaQsQuery, GetFaQsQueryVariables>(GetFaQsDocument, options);
+      }
+export function useGetFaQsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetFaQsQuery, GetFaQsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<GetFaQsQuery, GetFaQsQueryVariables>(GetFaQsDocument, options);
+        }
+export type GetFaQsQueryHookResult = ReturnType<typeof useGetFaQsQuery>;
+export type GetFaQsLazyQueryHookResult = ReturnType<typeof useGetFaQsLazyQuery>;
+export type GetFaQsQueryResult = ApolloReactCommon.QueryResult<GetFaQsQuery, GetFaQsQueryVariables>;
+export function refetchGetFaQsQuery(variables?: GetFaQsQueryVariables) {
+      return { query: GetFaQsDocument, variables: variables }
+    }
+export const AnswerFaqDocument = gql`
+    mutation AnswerFAQ($answerFaqAnswer: String!, $answerFaqFaqid: String!) {
+  answerFAQ(answer: $answerFaqAnswer, FAQID: $answerFaqFaqid)
+}
+    `;
+export type AnswerFaqMutationFn = ApolloReactCommon.MutationFunction<AnswerFaqMutation, AnswerFaqMutationVariables>;
+
+/**
+ * __useAnswerFaqMutation__
+ *
+ * To run a mutation, you first call `useAnswerFaqMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAnswerFaqMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [answerFaqMutation, { data, loading, error }] = useAnswerFaqMutation({
+ *   variables: {
+ *      answerFaqAnswer: // value for 'answerFaqAnswer'
+ *      answerFaqFaqid: // value for 'answerFaqFaqid'
+ *   },
+ * });
+ */
+export function useAnswerFaqMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<AnswerFaqMutation, AnswerFaqMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<AnswerFaqMutation, AnswerFaqMutationVariables>(AnswerFaqDocument, options);
+      }
+export type AnswerFaqMutationHookResult = ReturnType<typeof useAnswerFaqMutation>;
+export type AnswerFaqMutationResult = ApolloReactCommon.MutationResult<AnswerFaqMutation>;
+export type AnswerFaqMutationOptions = ApolloReactCommon.BaseMutationOptions<AnswerFaqMutation, AnswerFaqMutationVariables>;
+export const DeleteFaQsDocument = gql`
+    mutation DeleteFAQs($deleteFAQsFAQID: String!) {
+  deleteFAQs(FAQID: $deleteFAQsFAQID)
+}
+    `;
+export type DeleteFaQsMutationFn = ApolloReactCommon.MutationFunction<DeleteFaQsMutation, DeleteFaQsMutationVariables>;
+
+/**
+ * __useDeleteFaQsMutation__
+ *
+ * To run a mutation, you first call `useDeleteFaQsMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteFaQsMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteFaQsMutation, { data, loading, error }] = useDeleteFaQsMutation({
+ *   variables: {
+ *      deleteFAQsFAQID: // value for 'deleteFAQsFAQID'
+ *   },
+ * });
+ */
+export function useDeleteFaQsMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<DeleteFaQsMutation, DeleteFaQsMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<DeleteFaQsMutation, DeleteFaQsMutationVariables>(DeleteFaQsDocument, options);
+      }
+export type DeleteFaQsMutationHookResult = ReturnType<typeof useDeleteFaQsMutation>;
+export type DeleteFaQsMutationResult = ApolloReactCommon.MutationResult<DeleteFaQsMutation>;
+export type DeleteFaQsMutationOptions = ApolloReactCommon.BaseMutationOptions<DeleteFaQsMutation, DeleteFaQsMutationVariables>;
 export const LoginDocument = gql`
     mutation Login($loginData: LoginInput!) {
   login(data: $loginData) {
