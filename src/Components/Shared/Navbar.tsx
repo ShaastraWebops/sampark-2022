@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { UserRole } from "../../generated/graphql";
 import Profile from "../../Images/profile.png";
 import Shaastra from "../../Images/shaastra.png";
@@ -15,47 +16,61 @@ const Navbar = (props: Props) => {
   const navAuth = (
     <Fragment>
       {!role && (
-        <a href="/login" className="nav-link" style={{ minWidth: "150px" }}>
+        <NavLink to="/login" className="nav-link" style={{ minWidth: "150px" }}>
           LOGIN
-        </a>
+        </NavLink>
       )}
       {!role && (
-        <a href="/register" className="nav-link" style={{ minWidth: "150px" }}>
+        <NavLink
+          to="/register"
+          className="nav-link"
+          style={{ minWidth: "150px" }}
+        >
           REGISTER
-        </a>
+        </NavLink>
       )}
       {role && (
-        <a href="/profile" className="nav-link" style={{ minWidth: "150px" }}>
+        <NavLink
+          to="/profile"
+          className="nav-link"
+          style={{ minWidth: "150px" }}
+        >
           PROFILE
-        </a>
+        </NavLink>
       )}
       {role && (
-        <a href="/logout" className="nav-link" style={{ minWidth: "150px" }}>
+        <NavLink
+          to="/logout"
+          className="nav-link"
+          style={{ minWidth: "150px" }}
+        >
           LOGOUT
-        </a>
+        </NavLink>
       )}
     </Fragment>
   );
   const navPage = (
     <Fragment>
-      <a href="/" className="nav-link">
+      <NavLink to="/" className="nav-link">
         HOME
-      </a>
-      <a href="/#workshops" className="nav-link">
+      </NavLink>
+      <NavLink to="/#workshops" className="nav-link">
         WORKSHOPS
-      </a>
-      {role === UserRole.Admin && <a href="/add-workshop" className="nav-link">
-        ADD WORKSHOP
-      </a>}
-      <a href="/schedule" className="nav-link">
+      </NavLink>
+      {role === UserRole.Admin && (
+        <NavLink to="/add-workshop" className="nav-link">
+          ADD WORKSHOP
+        </NavLink>
+      )}
+      <NavLink to="/schedule" className="nav-link">
         SCHEDULE
-      </a>
-      <a href="/help-desk" className="nav-link">
+      </NavLink>
+      <NavLink to="/help-desk" className="nav-link">
         HELP DESK
-      </a>
-      <a href="/#contact" className="nav-link">
+      </NavLink>
+      <NavLink to="/#contact" className="nav-link">
         CONTACT US
-      </a>
+      </NavLink>
       {window.innerWidth < 1000 && navAuth}
     </Fragment>
   );

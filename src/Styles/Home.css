@@ -7,10 +7,10 @@
 
 /********* LANDING PAGE ************/
 .landing-section {
-  background-image: url("../Images/landing.png");
+  background-image: url("../Images/home1.svg");
   background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -69,10 +69,10 @@
 
 /********* ABOUT US ************/
 .about-us {
-  background-image: url("../Images/about.png");
+  background-image: url("../Images/home2.svg");
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover 50%;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -84,6 +84,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .about-us-title {
@@ -118,11 +119,11 @@
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  margin-top: 30px;
 }
 
 .collage-image > img {
   height: 100px;
-  margin: 30px 30px;
 }
 
 .description {
@@ -170,15 +171,15 @@
 
 .workshops-list {
   display: flex;
-  flex: auto;
   flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px;
 }
 
 /********* CONTACT US ************/
 .contact-us {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
 }
@@ -187,6 +188,7 @@
   display: flex;
   flex-wrap: wrap;
   flex: auto;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px;
 }

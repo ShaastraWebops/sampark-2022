@@ -38,18 +38,12 @@
 
 .nav-link {
   font-family: "Roboto";
-  font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 1.2em;
   text-decoration: none;
   color: #ffffff;
   text-align: center;
-  margin: 5px 0;
-}
-
-.nav-links > a:hover {
-  border-bottom: 3px solid #ff6363;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
 }
 
 .profile-info {

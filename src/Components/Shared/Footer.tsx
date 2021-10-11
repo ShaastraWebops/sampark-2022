@@ -45,7 +45,7 @@ const Footer = (props: Props) => {
         Sampark, Shaastra 2022 &copy; All Rigths Reserved
       </div>
       <div className="footer-divider"></div>
-      <div className="footer-text-2">DESINED BY,</div>
+      <div className="footer-text-2">Desined by,</div>
       <div className="team-members-list">
         {webOpsTeam.map((member) => (
           <div className="team-member">

@@ -63,8 +63,6 @@ const Workshop = (props: Props) => {
               isClosed={isRegistrationClosed}
             />
           )}
-        </div>
-        <div className="workshop-details-2">
           <div className="workshop-date">
             <div>DATE :</div>
             <div
@@ -91,6 +89,8 @@ const Workshop = (props: Props) => {
               ).toLocaleString()}
             </div>
           </div>
+        </div>
+        <div className="workshop-details-2">
           <div className="workshop-contacts-list">
             <div className="workshop-contacts-list-heading">CONTACT US</div>
             {data?.getWorkshop.contact.split(" AND ").map((contact) => {

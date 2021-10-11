@@ -21,7 +21,7 @@ const contacts = [
 
 const webOpsTeam = [
   {
-    name: "Drishti",
+    name: "Drishti Peshwani",
     number: "9518599566",
   },
   {
@@ -29,11 +29,11 @@ const webOpsTeam = [
     number: "9944010785",
   },
   {
-    name: "Krithika",
+    name: "Krithikaa",
     number: "8925693976",
   },
   {
-    name: "Yogesh",
+    name: "Yogheshwer Raja",
     number: "9489629652",
   },
 ];

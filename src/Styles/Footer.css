@@ -2,10 +2,11 @@
   background: #ffffff;
   border-radius: 0px 150px 0px 0px;
   align-items: flex-end;
+  padding: 25px;
+  margin-top: 50px;
 }
 
 .social-links {
-  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
