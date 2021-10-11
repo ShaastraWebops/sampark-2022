@@ -1,22 +1,60 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./App.css";
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
+import AddWorkshop from "./Components/Pages/AddWorkshop";
+import EditWorkshop from "./Components/Pages/EditWorkshop";
 import Home from "./Components/Pages/Home";
+import Logout from "./Components/Pages/Logout";
+import Schedule from "./Components/Pages/Schedule";
+import Workshop from "./Components/Pages/Workshop";
+import { UserRole } from "./generated/graphql";
+import AuthContext from "./Utils/contexts";
 import Login from "./Components/Pages/Login";
-import Register from "./Components/Pages/Register";
-import ForgotPassword from "./Components/ForgotPassword";
-import ForgotAfter from "./Components/Pages/ForgotAfter";
+import ForgotPassword from "./Components/Pages/ForgotPassword";
+import ResetPassword from "./Components/Pages/ResetPassword";
 import ResendEmail from "./Components/Pages/ResendEmail";
+import Profile from "./Components/Pages/Profile";
+import Register from "./Components/Pages/Register";
+import Verify from "./Components/Pages/Verify";
+import Helpdesk from "./Components/Pages/Helpdesk";
 
 function App() {
+  const { role } = useContext(AuthContext)!;
   return (
     <Router>
       <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
-      <Route exact path="/forgotpassword" component={ForgotPassword} />
-      <Route exact path="/passwordreset" component={ForgotAfter}></Route>
-      <Route exact path="/resendemail" component={ResendEmail}></Route>
+      <Route exact path="/workshop/:id" component={Workshop} />
+      <Route exact path="/help-desk" component={Helpdesk} />
+      <Route exact path="/schedule" component={Schedule} />
+      <Route exact path="/login">
+        {!role ? <Login /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/register">
+        {!role ? <Register /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/verify/:token">
+        {!role ? <Verify /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/forgot-password">
+        {!role ? <ForgotPassword /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/reset-password/:token">
+        {!role ? <ResetPassword /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/resend-email">
+        {!role ? <ResendEmail /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/logout">
+        {!!role ? <Logout /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/profile">
+        {!!role ? <Profile /> : <Redirect to="/login" />}
+      </Route>
+      <Route exact path="/add-workshop">
+        {role === UserRole.Admin ? <AddWorkshop /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/edit-workshop/:id">
+        {role === UserRole.Admin ? <EditWorkshop /> : <Redirect to="/" />}
+      </Route>
     </Router>
   );
 }

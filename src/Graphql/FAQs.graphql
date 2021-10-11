@@ -1,0 +1,23 @@
+mutation CreateFAQ($question: String!) {
+  createFAQ(question: $question)
+}
+
+query GetFAQs {
+  getFAQs {
+    count
+    faqs {
+      id
+      question
+      answer
+      createdOn
+    }
+  }
+}
+
+mutation AnswerFAQ($answerFaqAnswer: String!, $answerFaqFaqid: String!) {
+  answerFAQ(answer: $answerFaqAnswer, FAQID: $answerFaqFaqid)
+}
+
+mutation DeleteFAQs($deleteFAQsFAQID: String!) {
+  deleteFAQs(FAQID: $deleteFAQsFAQID)
+}

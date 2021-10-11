@@ -1,0 +1,33 @@
+.contact-card {
+  background: #fffffe;
+  border-radius: 24px;
+  height: 150px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px 10px;
+  padding: 20px 0;
+}
+
+.contact-card > a {
+  text-decoration: none;
+}
+
+.contact-name,
+.contact-email,
+.contact-number {
+  font-family: "Lato";
+  font-style: normal;
+  font-size: 25px;
+  text-align: center;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-name {
+  font-weight: 800;
+}

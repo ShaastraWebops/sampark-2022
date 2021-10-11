@@ -1,0 +1,64 @@
+.popup-modal {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.popup-modal-content {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  margin: auto;
+  width: 50%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 6px;
+}
+
+.popup-modal-message {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2em;
+  text-align: center;
+  color: #000000;
+}
+
+.popup-modal-close-btn {
+  border: none;
+  background: #bdf3cf;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5em;
+  text-align: center;
+  color: #000000;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.popup-modal-close-btn:hover,
+.popup-modal-close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .popup-modal-message {
+    font-size: 1.7em;
+  }
+  .popup-modal-close-btn {
+    font-size: 1.2em;
+  }
+}

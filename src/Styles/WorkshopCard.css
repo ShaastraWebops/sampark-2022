@@ -1,0 +1,53 @@
+.workshop-card {
+  background: #ffffff;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.workshop-card > img {
+  border-radius: 24px;
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.workshop-heading {
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.workshop-heading > p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  text-align: center;
+  color: #000000;
+  margin: 5px 0 0 0;
+  max-width: 290px;
+}
+
+.workshop-buttons {
+  display: flex;
+  margin: 5px 0 20px 0;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50px;
+}
+
+.workshop-button {
+  background: #ff6363;
+  border-radius: 24px;
+  border: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 10px;
+}

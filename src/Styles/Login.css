@@ -16,15 +16,20 @@
   position: relative;
   border-bottom: 1px solid #ff6363;
 }
-h2 {
+.Loginform h2 {
+  text-align: center;
+  margin: auto;
   color: white;
 }
 .Loginform .box {
   padding: 0 50px;
+  padding-bottom: 10px;
   height: 60vh;
   width: 60%;
+  display: flex;
+  flex-direction: column;
   align-content: center;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: rgba(0, 2, 114, 0.6);
   border-radius: 3px;
 }
@@ -44,10 +49,11 @@ h2 {
   color: #08095a;
   font-family: "Lato";
   font-weight: bold;
+  /* margin-bottom: 10%; */
   border-radius: 5px;
 }
 .Useralign {
-  justify-content: center;
+  justify-content: space-evenly;
   display: flex;
   flex-direction: row;
 }
@@ -57,21 +63,23 @@ h2 {
   border-radius: 5px;
   border: white;
 }
-button {
+.auth-button {
   align-content: center;
+  align-self: center;
+  justify-self: center;
   background-color: #08095a;
   color: white;
   border: 2px;
   border-radius: 2px;
   font-family: "Lato";
-  margin-top: 5%;
-  height: 60%;
-  width: 20%;
   border-radius: 4px;
-  margin-left: 30%;
 }
 .divid {
-  width: fit-content;
+  width: 60%;
+}
+.divid input 
+{
+  width: 90%;
 }
 .header {
   display: flex;
@@ -89,10 +97,53 @@ button {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 1100px)
+{
+  .Loginform h2 
+  {
+    margin: auto;
+    font-size: 4vw;
+  }
+  .Loginform
+  {
+    overflow-y: hidden;
+  }
+  .Loginform .box
+  {
+    justify-content: space-evenly;
+    width: 90vw;
+  }
+  .Loginform .auth-button
+  {
+    margin-bottom: 0%;
+  }
+}
 @media screen and (max-width: 920px) {
-  .Useralign {
-    margin-left: 5%;
+  .Loginform h2 
+  {
+    margin: auto;
   }
 }
 @media screen and (max-width: 500px) {
+  .Userinfo
+  {
+    width: 100%;
+  }
+  .Loginform .box
+  {
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+  .Loginform h2 
+  {
+    font-size: 6vw;
+  }
+  .Loginform .auth-button
+  {
+    font-size: 4vw;
+    padding: 0.5vh;
+  }
 }

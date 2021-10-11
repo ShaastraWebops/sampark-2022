@@ -1,0 +1,53 @@
+query getWorkshops {
+  getWorkshops {
+    workshops {
+      id
+      title
+      pic
+      workshopDate
+      registrationCloseTime
+    }
+    count
+  }
+}
+
+query GetWorkshop($workshopId: String!) {
+  getWorkshop(WorkshopID: $workshopId) {
+    id
+    title
+    description
+    pic
+    workshopDate
+    registrationCloseTime
+    contact
+  }
+}
+
+query IsRegistered($isRegisteredWorkshopId: String!) {
+  isRegistered(WorkshopID: $isRegisteredWorkshopId)
+}
+
+mutation Register($registerWorkshopId: String!) {
+  register(WorkshopID: $registerWorkshopId)
+}
+
+mutation CreateWorkshop($createWorkshopData: CreateWorkshopInput!) {
+  createWorkshop(data: $createWorkshopData) {
+    id
+  }
+}
+
+mutation EditWorkshop(
+  $editWorkshopWorkshopId: String!
+  $data: EditWorkshopInput!
+) {
+  editWorkshop(WorkshopID: $editWorkshopWorkshopId, data: $data)
+}
+
+mutation DeleteWorkshop($deleteWorkshopWorkshopId: String!) {
+  deleteWorkshop(WorkshopID: $deleteWorkshopWorkshopId)
+}
+
+query ExportCSV($exportCsvWorkshopId: String!) {
+  exportCSV(WorkshopID: $exportCsvWorkshopId)
+}

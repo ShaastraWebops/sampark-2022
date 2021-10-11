@@ -1,0 +1,51 @@
+mutation Login($loginData: LoginInput!) {
+  login(data: $loginData) {
+    name
+    id
+    spID
+    email
+    role
+  }
+}
+
+mutation CreateUser($createUserData: CreateUserInput!) {
+  createUser(data: $createUserData)
+}
+
+mutation VerifyUser($verifyUserData: VerifyUserInput!) {
+  verifyUser(data: $verifyUserData) {
+    name
+    id
+    spID
+    email
+    role
+  }
+}
+
+mutation ResendVerificationMail(
+  $resendVerificationMailData: RequestForgotPassInput!
+) {
+  resendVerificationMail(data: $resendVerificationMailData)
+}
+
+mutation ReqForgotPassVerification(
+  $reqForgotPassVerificationData: RequestForgotPassInput!
+) {
+  reqForgotPassVerification(data: $reqForgotPassVerificationData)
+}
+
+mutation ResetPassword($resetPasswordData: ResetPasswordInput!) {
+  resetPassword(data: $resetPasswordData)
+}
+
+mutation Logout {
+  logoutUser
+}
+
+query GetUsersCount {
+  getUsersCount
+}
+
+query GetUsersDataCSV {
+  getUsersDataCSV
+}

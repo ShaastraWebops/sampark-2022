@@ -1,0 +1,128 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 74px;
+  background: #292a89;
+  border-radius: 0px 0px 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shaastra-logo {
+  height: 60px;
+  margin-left: 40px;
+}
+
+.navbar-profile {
+  margin-right: 40px;
+  background: none;
+  border: none;
+}
+
+.navbar-profile:hover {
+  cursor: pointer;
+}
+
+.navbar-profile > img {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-link {
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.profile-info {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  margin-right: 40px;
+}
+
+.hamburger {
+  position: absolute;
+  top: 74px;
+  right: 0;
+  background: #ffffff;
+  box-shadow: -5px 6px 20px rgba(0, 0, 0, 0.38);
+  border-radius: 0px 0px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 20px 20px;
+}
+
+.hamburger > .nav-link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3em;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.not-active {
+  display: none;
+}
+
+.hamburger-mobile {
+  display: inline-block;
+  cursor: pointer;
+  color: none;
+  margin-right: 7px;
+  background: none;
+  border: none;
+}
+
+.bar1,
+.bar2,
+.bar3,
+.change-bar1,
+.change-bar2,
+.change-bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change-bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change-bar2 {
+  opacity: 0;
+}
+
+.change-bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar-profile {
+    margin-right: 5px;
+  }
+
+  .shaastra-logo {
+    margin-left: 5px;
+  }
+}
