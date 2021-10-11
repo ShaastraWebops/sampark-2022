@@ -9,9 +9,9 @@ interface Props {
 
 const Popup = (props: Props) => {
   let backgroundColor = "";
-  if (props.popupType === "ERROR") backgroundColor = "#dd9f9f";
-  if (props.popupType === "SUCCESS") backgroundColor = "#bdf3cf";
-  if (props.popupType === "WARNING") backgroundColor = "#ecf490";
+  if (props.popupType === "ERROR") backgroundColor = "#ff6363";
+  if (props.popupType === "SUCCESS") backgroundColor = "#000272";
+  if (props.popupType === "WARNING") backgroundColor = "#acbcf7";
 
   return (
     <div className="popup-modal">
@@ -20,7 +20,7 @@ const Popup = (props: Props) => {
         <button
           className="popup-modal-close-btn"
           onClick={props.close}
-          style={{ backgroundColor }}
+          style={{ backgroundColor, color: "#ffffff" }}
         >
           Close
         </button>

@@ -63,7 +63,7 @@ const RegisterButton = (props: Props) => {
       <button
         className={props.className}
         disabled
-        style={{ backgroundColor: "red" }}
+        style={{ backgroundColor: "#8dacd0" }}
       >
         REGISTRATION CLOSED
       </button>

@@ -7,8 +7,8 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgb(0, 2, 114);
+  background-color: rgba(0, 2, 114, 0.6);
 }
 
 .popup-modal-content {
@@ -35,7 +35,7 @@
 
 .popup-modal-close-btn {
   border: none;
-  background: #bdf3cf;
+  background: #acbcf7;
   font-family: "Lato";
   font-style: normal;
   font-weight: normal;
@@ -49,7 +49,6 @@
 
 .popup-modal-close-btn:hover,
 .popup-modal-close-btn:focus {
-  color: black;
   text-decoration: none;
   cursor: pointer;
 }

@@ -21,24 +21,24 @@ const Footer = (props: Props) => {
           target="_blank"
           rel="noreferrer"
         >
-          <FaInstagram size={window.innerWidth >= 600 ? "45" : "30"} />
+          <FaInstagram size={window.innerWidth >= 600 ? "45" : "30"} color="#000272"/>
         </a>
         <a href="http://localhost:3000" target="_blank" rel="noreferrer">
-          <FaLinkedin size={window.innerWidth >= 600 ? "45" : "30"} />
+          <FaLinkedin size={window.innerWidth >= 600 ? "45" : "30"} color="#000272"/>
         </a>
         <a
           href="https://www.youtube.com/c/iitmshaastra"
           target="_blank"
           rel="noreferrer"
         >
-          <FaYoutubeSquare size={window.innerWidth >= 600 ? "45" : "30"} />
+          <FaYoutubeSquare size={window.innerWidth >= 600 ? "45" : "30"} color="#000272"/>
         </a>
         <a
           href="https://www.facebook.com/Shaastra"
           target="_blank"
           rel="noreferrer"
         >
-          <FaFacebook size={window.innerWidth >= 600 ? "45" : "30"} />
+          <FaFacebook size={window.innerWidth >= 600 ? "45" : "30"} color="#000272"/>
         </a>
       </div>
       <div className="footer-text-1">
