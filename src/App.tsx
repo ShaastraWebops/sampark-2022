@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
-import "./App.css";
 import AddWorkshop from "./Components/Pages/AddWorkshop";
 import EditWorkshop from "./Components/Pages/EditWorkshop";
 import Home from "./Components/Pages/Home";
