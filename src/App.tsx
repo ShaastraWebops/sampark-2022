@@ -16,6 +16,7 @@ import ResendEmail from "./Components/Pages/ResendEmail";
 import Profile from "./Components/Pages/Profile";
 import Register from "./Components/Pages/Register";
 import Verify from "./Components/Pages/Verify";
+import Helpdesk from "./Components/Pages/Helpdesk";
 
 function App() {
   const { role } = useContext(AuthContext)!;
@@ -23,7 +24,7 @@ function App() {
     <Router>
       <Route exact path="/" component={Home} />
       <Route exact path="/workshop/:id" component={Workshop} />
-      <Route exact path="/help-desk" component={Schedule} />
+      <Route exact path="/help-desk" component={Helpdesk} />
       <Route exact path="/schedule" component={Schedule} />
       <Route exact path="/login">
         {!role ? <Login /> : <Redirect to="/" />}
