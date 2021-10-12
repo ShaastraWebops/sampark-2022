@@ -69,7 +69,7 @@ const Home = (props: Props) => {
       </div>
 
       {/** WORKSHOPS **/}
-      {data && (
+      {data?.getWorkshops.count !== 0 && (
         <div id="workshops" className="workshops">
           <Title title="WORKSHOPS" isHomePage={true} />
           <div className="workshops-list">
