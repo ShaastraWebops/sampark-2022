@@ -44,6 +44,11 @@
   color: #ffffff;
   text-align: center;
   letter-spacing: 2px;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-links > a:hover {
+  border-bottom: 3px solid #ff6363;
 }
 
 .profile-info {
@@ -124,5 +129,11 @@
 
   .shaastra-logo {
     margin-left: 5px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .hamburger-mobile{
+    margin-right: 20px;
   }
 }

@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
 import { UserRole } from "../../generated/graphql";
 import Profile from "../../Images/profile.png";
 import Shaastra from "../../Images/shaastra.png";
@@ -16,61 +15,61 @@ const Navbar = (props: Props) => {
   const navAuth = (
     <Fragment>
       {!role && (
-        <NavLink to="/login" className="nav-link" style={{ minWidth: "150px" }}>
+        <a href="/login" className="nav-link" style={{ minWidth: "150px" }}>
           LOGIN
-        </NavLink>
+        </a>
       )}
       {!role && (
-        <NavLink
-          to="/register"
+        <a
+          href="/register"
           className="nav-link"
           style={{ minWidth: "150px" }}
         >
           REGISTER
-        </NavLink>
+        </a>
       )}
       {/* {role && (
-        <NavLink
-          to="/profile"
+        <a
+          href="/profile"
           className="nav-link"
           style={{ minWidth: "150px" }}
         >
           PROFILE
-        </NavLink>
+        </a>
       )} */}
       {role && (
-        <NavLink
-          to="/logout"
+        <a
+          href="/logout"
           className="nav-link"
           style={{ minWidth: "150px" }}
         >
           LOGOUT
-        </NavLink>
+        </a>
       )}
     </Fragment>
   );
   const navPage = (
     <Fragment>
-      <NavLink to="/" className="nav-link">
+      <a href="/" className="nav-link">
         HOME
-      </NavLink>
-      <NavLink to="/#workshops" className="nav-link">
+      </a>
+      <a href="/#workshops" className="nav-link">
         WORKSHOPS
-      </NavLink>
+      </a>
       {role === UserRole.Admin && (
-        <NavLink to="/add-workshop" className="nav-link">
+        <a href="/add-workshop" className="nav-link">
           ADD WORKSHOP
-        </NavLink>
+        </a>
       )}
-      <NavLink to="/schedule" className="nav-link">
+      <a href="/schedule" className="nav-link">
         SCHEDULE
-      </NavLink>
-      <NavLink to="/help-desk" className="nav-link">
+      </a>
+      <a href="/help-desk" className="nav-link">
         HELP DESK
-      </NavLink>
-      <NavLink to="/#contact" className="nav-link">
+      </a>
+      <a href="/#contact" className="nav-link">
         CONTACT US
-      </NavLink>
+      </a>
       {window.innerWidth < 1000 && navAuth}
     </Fragment>
   );
@@ -104,23 +103,14 @@ const Navbar = (props: Props) => {
           <div className="sampark-id">{localStorage.getItem("spID")}</div>
         </div>
       )}
-      {window.innerWidth >= 1000 ? (
-        <button
-          className="navbar-profile"
-          onClick={() => setIsMenuON(!isMenuON)}
-        >
-          <img src={Profile} alt="Profile" />
-        </button>
-      ) : (
-        <button
-          className="hamburger-mobile"
-          onClick={() => setIsMenuON(!isMenuON)}
-        >
-          <div className={isMenuON ? "change-bar1" : "bar1"}></div>
-          <div className={isMenuON ? "change-bar2" : "bar2"}></div>
-          <div className={isMenuON ? "change-bar3" : "bar3"}></div>
-        </button>
-      )}
+      <button
+        className="hamburger-mobile"
+        onClick={() => setIsMenuON(!isMenuON)}
+      >
+        <div className={isMenuON ? "change-bar1" : "bar1"}></div>
+        <div className={isMenuON ? "change-bar2" : "bar2"}></div>
+        <div className={isMenuON ? "change-bar3" : "bar3"}></div>
+      </button>
     </div>
   );
 };
