@@ -12,6 +12,7 @@ import Title from "../Shared/Title";
 import { converter } from "../Form/WorkshopForm";
 import Popup from "../Cards/Popup";
 import Loader from "../Shared/Loader";
+import moment from "moment";
 
 interface Props {}
 
@@ -84,9 +85,9 @@ const Workshop = (props: Props) => {
                 fontWeight: "normal",
               }}
             >
-              {new Date(
+              {moment(
                 parseInt(data?.getWorkshop.registrationCloseTime!)
-              ).toLocaleString()}
+              ).format("MMMM Do YYYY, h:mm a")}
             </div>
           </div>
         </div>
