@@ -5,6 +5,7 @@ import Profile from "../../Images/profile.png";
 import Shaastra from "../../Images/shaastra.png";
 import "../../Styles/Navbar.css";
 import AuthContext from "../../Utils/contexts";
+import { HashLink } from 'react-router-hash-link';
 
 interface Props {}
 
@@ -15,18 +16,18 @@ const Navbar = (props: Props) => {
   const navAuth = (
     <Fragment>
       {!role && (
-        <a href="/login" className="nav-link" style={{ minWidth: "150px" }}>
+        <HashLink to="/login" className="nav-link" style={{ minWidth: "150px" }}>
           LOGIN
-        </a>
+        </HashLink>
       )}
       {!role && (
-        <a
-          href="/register"
+        <HashLink
+          to="/register"
           className="nav-link"
           style={{ minWidth: "150px" }}
         >
           REGISTER
-        </a>
+        </HashLink>
       )}
       {/* {role && (
         <a
@@ -38,38 +39,38 @@ const Navbar = (props: Props) => {
         </a>
       )} */}
       {role && (
-        <a
-          href="/logout"
+        <HashLink
+          to="/logout"
           className="nav-link"
           style={{ minWidth: "150px" }}
         >
           LOGOUT
-        </a>
+        </HashLink>
       )}
     </Fragment>
   );
   const navPage = (
     <Fragment>
-      <a href="/" className="nav-link">
+      <HashLink to="/" className="nav-link">
         HOME
-      </a>
-      <a href="/#workshops" className="nav-link">
+      </HashLink>
+      <HashLink to="/#workshops" className="nav-link">
         WORKSHOPS
-      </a>
+      </HashLink>
       {role === UserRole.Admin && (
-        <a href="/add-workshop" className="nav-link">
+        <HashLink to="/add-workshop" className="nav-link">
           ADD WORKSHOP
-        </a>
+        </HashLink>
       )}
-      <a href="/schedule" className="nav-link">
+      <HashLink to="/schedule" className="nav-link">
         SCHEDULE
-      </a>
-      <a href="/help-desk" className="nav-link">
+      </HashLink>
+      <HashLink to="/help-desk" className="nav-link">
         HELP DESK
-      </a>
-      <a href="/#contact" className="nav-link">
+      </HashLink>
+      <HashLink to={"/#contact"} className="nav-link">
         CONTACT US
-      </a>
+      </HashLink>
       {window.innerWidth < 1000 && navAuth}
     </Fragment>
   );
