@@ -42,7 +42,7 @@ const Footer = (props: Props) => {
         </a>
       </div>
       <div className="footer-text-1">
-        Sampark, Shaastra 2022 &copy; All Rigths Reserved
+        Sampark, Shaastra 2022 &copy; All Rights Reserved
       </div>
       <div className="footer-divider"></div>
       <div className="footer-text-2">Desined by,</div>

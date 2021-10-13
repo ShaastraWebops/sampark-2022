@@ -5,7 +5,7 @@ const schedules = [
         schedule: [
             {
                 isBreak: false,
-                name: "Python",
+                name: "Python basics for Computational Physics",
                 time: "09:00AM - 12:00PM"
             },
             {
@@ -33,7 +33,7 @@ const schedules = [
             },
             {
                 isBreak: false,
-                name: "Quiz - Python",
+                name: "Quiz - Python basics for Computational Physics",
                 time: "06:15PM - 07:00PM"
             },
             {
@@ -53,7 +53,7 @@ const schedules = [
         schedule: [
             {
                 isBreak: false,
-                name: "CKT",
+                name: "Fundamentals of Circuit Simulation",
                 time: "10:00AM - 12:30PM"
             },
             {
@@ -62,7 +62,7 @@ const schedules = [
             },
             {
                 isBreak: false,
-                name: "CKT",
+                name: "Fundamentals of Circuit Simulation",
                 time: "01:30PM - 04:00PM"
             },
             {
@@ -71,7 +71,7 @@ const schedules = [
             },
             {
                 isBreak: false,
-                name: "Quiz - CKT",
+                name: "Quiz - Fundamentals of Circuit Simulation",
                 time: "06:00PM - 07:00PM"
             }
         ]
@@ -82,7 +82,7 @@ const schedules = [
         schedule: [
             {
                 isBreak: false,
-                name: "WebDev",
+                name: "Getting started with Web Development",
                 time: "10:00AM - 12:30PM"
             },
             {
@@ -91,7 +91,7 @@ const schedules = [
             },
             {
                 isBreak: false,
-                name: "WebDev",
+                name: "Getting started with Web Development",
                 time: "01:30PM - 04:00PM"
             },
             {
@@ -100,7 +100,7 @@ const schedules = [
             },
             {
                 isBreak: false,
-                name: "Quiz - WebDev",
+                name: "Quiz - Getting started with Web Development",
                 time: "06:00PM - 07:00PM"
             }
         ]
