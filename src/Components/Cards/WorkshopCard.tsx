@@ -28,7 +28,7 @@ const WorkshopCard = (props: Props) => {
       <img src={props.image} alt="Workshop" />
       <div className="workshop-heading">
         <p>{props.title}</p>
-        <p style={{ fontWeight: "normal" }}>{props.date}</p>
+        <p style={{ fontWeight: "normal" }}>{props.date.split(". ")[1]}</p>
       </div>
       <div className="workshop-buttons">
         <button

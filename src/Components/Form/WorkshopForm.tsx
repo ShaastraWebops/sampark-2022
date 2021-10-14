@@ -120,7 +120,7 @@ const WorkshopForm = (probs: Probs) => {
                 <Field
                   id="workshopDate"
                   name="workshopDate"
-                  placeholder='Workshop Date(use this "31st OCTBER" format)'
+                  placeholder='Workshop Date(use this "1. 31st OCTBER" format)'
                   required={true}
                 />
               </div>
