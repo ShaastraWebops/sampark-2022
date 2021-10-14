@@ -16,25 +16,25 @@ const contacts = [
   {
     name: "Anshid",
     number: "7592976901",
-  }
+  },
 ];
 
 const webOpsTeam = [
   {
-    name: "Drishti Peshwani",
-    number: "9518599566",
+    name: "Janith M S",
+    email: "janithms9920@gmail.com",
   },
   {
-    name: "Janith M S",
-    number: "9944010785",
+    name: "Drishti Peshwani",
+    email: "drishtipeshwani09@gmail.com",
   },
   {
     name: "Krithikaa",
-    number: "8925693976",
+    email: "kuruthiga22@gmail.com",
   },
   {
     name: "Yogheshwer Raja",
-    number: "9489629652",
+    email: "yogheshwerrajagg@gmail.com",
   },
 ];
 
