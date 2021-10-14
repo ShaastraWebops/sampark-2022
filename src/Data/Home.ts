@@ -1,4 +1,4 @@
-const oneLiner = `Where Shaastra meets college`;
+const oneLiner = `A spectrum of insightful workshops for college student`;
 
 const description = `Sampark is an innovative initiative of Shaastra in which college
 students can participate in various workshops to boost up their
