@@ -2,12 +2,16 @@
   min-height: 100vh;
   background: #acbcf7;
   padding-top: 74px;
+  padding-bottom: 40px;
 }
 
 .schedule-content {
   background: rgba(0, 2, 114, 0.43);
-  border-radius: 24px 24px 0 0;
+  border-radius: 24px;
   padding-bottom: 40px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
 }
 
 .workshop-day {
@@ -39,7 +43,7 @@
   font-size: 1.3em;
   color: #ffffff;
   padding: 20px 0;
-  margin: 20px 150px;
+  margin: 20px 40px;
   text-align: center;
 }
 
@@ -49,8 +53,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 60px;
-  margin: 20px 150px;
+  padding: 20px 40px;
+  margin: 20px 40px;
 }
 
 .workshop-schedule-name,
@@ -58,7 +62,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: #000272;
   text-align: center;
 }
@@ -76,22 +80,29 @@
   border-radius: 5px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 950px) {
   .workshop-schedule {
-    padding: 20px;
-    margin: 20px;
+    flex-direction: column;
   }
-
-  .workshop-break {
-    margin: 20px;
-  }
-  .day-end-line {
-    margin-left: 20px;
-    margin-right: 20px;
+  .workshop-schedule-time {
+    padding-top: 10px;
+    font-size: 1.4em;
+    font-weight: bolder;
+    color: #c96582;
   }
 }
 
 @media only screen and (max-width: 600px) {
+  .schedule-content {
+    width: 90%;
+  }
+  .workshop-schedule,
+  .workshop-break {
+    margin: 20px;
+  }
+}
+
+/* @media only screen and (max-width: 600px) {
   .workshop-day-day,
   .workshop-day-date {
     font-size: 2em;
@@ -105,6 +116,9 @@
   }
 
   .workshop-schedule-time {
-    font-size: 1.2em;
+    padding-top: 10px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: #c96582;
   }
-}
+} */
