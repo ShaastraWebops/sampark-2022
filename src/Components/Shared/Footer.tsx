@@ -3,10 +3,9 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
-  FaWhatsappSquare,
   FaYoutubeSquare,
 } from "react-icons/fa";
-
+import { HiMail } from "react-icons/hi";
 import "../../Styles/Footer.css";
 import { webOpsTeam } from "../../Data/Home";
 
@@ -51,12 +50,12 @@ const Footer = (props: Props) => {
           <div className="team-member">
             <div>{member.name}</div>
             <a
-              href={`http://wa.me/+91${parseInt(member.number)}`}
+              href={`mailto:${member.email}`}
               target="_blank"
               rel="noreferrer"
             >
-              <FaWhatsappSquare color="green"/>
-              &nbsp;+91&nbsp;{member.number.slice(0,5)}&nbsp;{member.number.slice(5,10)}
+              <HiMail color="#000272" size={"25"}/>
+              &nbsp;{member.email}
             </a>
           </div>
         ))}

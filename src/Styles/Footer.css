@@ -53,6 +53,7 @@
 
 .team-member {
   margin: 10px;
+  width: 250px;
 }
 
 .team-member > a {

@@ -8,13 +8,14 @@
 
 .workshop-card > img {
   border-radius: 24px;
-  width: 350px;
-  height: 200px;
+  width: 380px;
+  height: 220px;
   object-fit: cover;
+  margin-bottom: 20px;
 }
 
 .workshop-heading {
-  margin: 0 30px;
+  margin: 0 30px 20px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,13 +29,13 @@
   font-size: 25px;
   text-align: center;
   color: #000000;
-  margin: 5px 0 0 0;
+  margin: 0;
   max-width: 290px;
 }
 
 .workshop-buttons {
   display: flex;
-  margin: 5px 0 20px 0;
+  margin: 0 0 20px 0;
   align-items: center;
   justify-content: space-evenly;
   height: 50px;
@@ -49,5 +50,23 @@
   font-weight: bold;
   font-size: 16px;
   color: #ffffff;
-  padding: 10px;
+  padding: 10px 15px;
+}
+
+@media only screen and (max-width: 400px) {
+  .workshop-card > img { 
+    width: 80vw;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .workshop-card > img { 
+    gap: 100px;
+    width: 400px;
+    height: 250px;
+  }
+  .workshop-heading > p {
+    font-size: 2em;
+    margin-top: 20px;
+  }
 }

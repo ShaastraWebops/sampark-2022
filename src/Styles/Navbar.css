@@ -90,7 +90,7 @@
   display: inline-block;
   cursor: pointer;
   color: none;
-  margin-right: 7px;
+  margin-right: 30px;
   background: none;
   border: none;
 }
@@ -101,16 +101,16 @@
 .change-bar1,
 .change-bar2,
 .change-bar3 {
-  width: 35px;
-  height: 5px;
+  width: 30px;
+  height: 3px;
   background-color: #ffffff;
   margin: 6px 0;
   transition: 0.4s;
 }
 
 .change-bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
 }
 
 .change-bar2 {
@@ -118,8 +118,8 @@
 }
 
 .change-bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
+  -webkit-transform: rotate(45deg) translate(-7px, -7px);
+  transform: rotate(45deg) translate(-7px, -7px);
 }
 
 @media only screen and (max-width: 600px) {
@@ -129,11 +129,5 @@
 
   .shaastra-logo {
     margin-left: 5px;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .hamburger-mobile{
-    margin-right: 20px;
   }
 }
