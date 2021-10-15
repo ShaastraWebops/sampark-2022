@@ -7,8 +7,8 @@
 
 /********* LANDING PAGE ************/
 .landing-section {
-  background-image: url("../Images/home1.svg");
-  background-position: bottom center;
+  background-image: url("../Images/home_top.png"), url("../Images/home_bottom.png");
+  background-position: center 74px, bottom center;
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
@@ -59,9 +59,21 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
+  .sampark-one-line {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
   .sampark-title {
-    font-size: 55px;
+    font-size: 85px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .sampark-title {
+    font-size: 60px;
   }
 
   .sampark-one-line {
@@ -70,6 +82,12 @@
 
   .home-register {
     font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .sampark-one-line {
+    width: 90%;
   }
 }
 
