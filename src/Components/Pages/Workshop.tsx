@@ -73,7 +73,7 @@ const Workshop = (props: Props) => {
                 fontWeight: "normal",
               }}
             >
-              {data?.getWorkshop.workshopDate}
+              {data?.getWorkshop.workshopDate.split(". ")[1]}
             </div>
           </div>
           <div className="workshop-deadline">
