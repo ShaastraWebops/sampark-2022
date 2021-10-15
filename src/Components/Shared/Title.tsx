@@ -23,7 +23,7 @@ const Title = (props: Props) => {
           }
         />
       </div>
-      <div className={props.isHomePage ? "title-text" : "title-text-white"}>
+      <div className={props.isHomePage ? "title-text" : "title-text-blue"}>
         {props.title}
       </div>
       <div className="right-lines">
