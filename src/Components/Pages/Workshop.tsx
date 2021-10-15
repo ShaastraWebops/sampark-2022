@@ -65,22 +65,20 @@ const Workshop = (props: Props) => {
             />
           )}
           <div className="workshop-date">
-            <div>DATE :</div>
+            <div>DATE</div>
             <div
               style={{
-                textAlign: "end",
                 marginTop: "3px",
                 fontWeight: "normal",
               }}
             >
-              {data?.getWorkshop.workshopDate.split(". ")[1]}
+              31st OCTOBER
             </div>
           </div>
           <div className="workshop-deadline">
-            <div>REGISTRATION DEADLINE :</div>
+            <div>REGISTRATION DEADLINE</div>
             <div
               style={{
-                textAlign: "end",
                 marginTop: "3px",
                 fontWeight: "normal",
               }}
@@ -98,13 +96,21 @@ const Workshop = (props: Props) => {
               const parsedContact = JSON.parse(contact);
               return (
                 <div className="workshop-contact">
-                  <div>{parsedContact.name} :</div>
-                  <div style={{ textAlign: "end", fontWeight: "normal" }}>
-                    {parsedContact.email}
+                  <div style={{ textAlign: "start" }}>
+                    {parsedContact.name} :
                   </div>
-                  <div style={{ textAlign: "end", fontWeight: "normal" }}>
-                    {parsedContact.number}
-                  </div>
+                  <a
+                    href={`mailto:${parsedContact.email}`}
+                    className="workshop-contact-email"
+                  >
+                    <div>&nbsp;{parsedContact.email}</div>
+                  </a>
+                  <a
+                    href={`http://wa.me/+91${parsedContact.number}`}
+                    className="workshop-contact-number"
+                  >
+                    <div>&nbsp;{parsedContact.number}</div>
+                  </a>
                 </div>
               );
             })}
