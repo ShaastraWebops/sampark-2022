@@ -1,6 +1,5 @@
 import React from "react";
-import "../../Styles/ForgotPassword.css";
-import "../../Styles/Login.css";
+import "../../Styles/Auth.css";
 import { useState } from "react";
 import { useReqForgotPassVerificationMutation } from "../../generated/graphql";
 import Popup from "../Cards/Popup";
@@ -38,7 +37,7 @@ function ForgotPassword() {
     );
   }
 
-  if (loading) return <Loader/>;
+  if (loading) return <Loader />;
 
   if (error) {
     if (error.message.includes("Could not find any entity of type")) {
@@ -63,31 +62,39 @@ function ForgotPassword() {
   }
 
   return (
-    <div className="Loginform">
-      <div className="box">
-        <div className="header">
-          <h2>FORGOT PASSWORD</h2>
-          <div className="line" />
-        </div>
-        <form className="Credentials" action="" onSubmit={forgotPassReqHandler}>
-          <div className="Userinfo">
-            <div className="Useralign">
-              <div className="info">
-                <label htmlFor="email">EMAIL ID:</label>
-              </div>
-              <div className="divid">
-                <input
-                  required
-                  type="email"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  name="email"
-                />
-              </div>
-            </div>
-            <button className="auth-button">Send link to reset password</button>
+    <div className="auth-page">
+      <div className="auth-form-box">
+        <div className="auth-header auth-header-larger-heading">
+          <div className="auth-header-text auth-header-text-larger-heading">
+            FORGOT PASSWORD
           </div>
+          <div className="auth-header-line auth-header-line-larger-heading" />
+        </div>
+        <form
+          className="auth-form-inner-box"
+          action=""
+          onSubmit={forgotPassReqHandler}
+        >
+          <div className="auth-form">
+            <div className="auth-form-label">
+              <label htmlFor="email">EMAIL ID</label>
+            </div>
+            <div className="auth-form-input">
+              <input
+                required
+                type="email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                name="email"
+                placeholder="Enter your registered Email"
+              />
+            </div>
+          </div>
+          <button className="auth-button">SUBMIT</button>
+          <a href="/login" className="auth-link">
+            Back to login
+          </a>
         </form>
       </div>
     </div>

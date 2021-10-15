@@ -1,6 +1,5 @@
 import React from "react";
-import "../../Styles/ForgotPassword.css";
-import "../../Styles/Login.css";
+import "../../Styles/Auth.css";
 import { useState } from "react";
 import { useResetPasswordMutation } from "../../generated/graphql";
 import { useHistory, useParams } from "react-router-dom";
@@ -23,7 +22,7 @@ function ResetPassword() {
       },
     });
 
-  const registerHandler = async (e: any) => {
+  const resetPassHandler = async (e: any) => {
     e.preventDefault();
     if (pw !== cpw) {
       window.alert("Password didn't match");
@@ -36,7 +35,7 @@ function ResetPassword() {
     }
   };
 
-  if (loading) return <Loader/>;
+  if (loading) return <Loader />;
 
   if (data?.resetPassword) {
     return (
@@ -80,40 +79,49 @@ function ResetPassword() {
   }
 
   return (
-    <div className="Loginform">
-      <div className="box">
-        <div className="header">
-          <h2>RESET PASSWORD</h2>
-          <div className="line" />
-        </div>
-        <form className="Credentials" action="" onSubmit={registerHandler}>
-          <div className="Userinfo">
-            <div className="Useralign">
-              <div className="info">
-                <label htmlFor="email">NEW PASSWORD:</label>
-                <label htmlFor="password">CONFIRM PASSWORD:</label>
-              </div>
-              <div className="divid">
-                <input
-                  required
-                  type="password"
-                  onChange={(e) => {
-                    setPw(e.target.value);
-                  }}
-                  name="pw"
-                />
-                <input
-                  required
-                  type="password"
-                  onChange={(e) => {
-                    setCPw(e.target.value);
-                  }}
-                  name="cpw"
-                ></input>
-              </div>
-            </div>
-            <button className="auth-button">Reset password</button>
+    <div className="auth-page">
+      <div className="auth-form-box">
+        <div className="auth-header auth-header-larger-heading">
+          <div className="auth-header-text auth-header-text-larger-heading">
+            RESET PASSWORD
           </div>
+          <div className="auth-header-line auth-header-line-larger-heading" />
+        </div>
+        <form
+          className="auth-form-inner-box"
+          action=""
+          onSubmit={resetPassHandler}
+        >
+          <div className="auth-form">
+            <div className="auth-form-label">
+              <label htmlFor="pw">NEW PASSWORD</label>
+              <label htmlFor="pw">CONFIRM PASSWORD</label>
+            </div>
+            <div className="auth-form-input">
+              <input
+                required
+                type="password"
+                onChange={(e) => {
+                  setPw(e.target.value);
+                }}
+                name="pw"
+                placeholder="Enter your new password"
+              />
+              <input
+                required
+                type="password"
+                onChange={(e) => {
+                  setCPw(e.target.value);
+                }}
+                name="cpw"
+                placeholder="Re-enter the password"
+              />
+            </div>
+          </div>
+          <button className="auth-button">SUBMIT</button>
+          <a href="/login" className="auth-link">
+            Back to login
+          </a>
         </form>
       </div>
     </div>

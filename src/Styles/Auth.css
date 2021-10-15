@@ -1,0 +1,350 @@
+.Loginform {
+  position: relative;
+  background-image: url(../Images/background_login.png);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap");
+.line {
+  position: relative;
+  border-bottom: 1px solid #ff6363;
+}
+.Loginform h2 {
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+.Loginform .box {
+  padding: 0 50px;
+  padding-bottom: 10px;
+  height: 60vh;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  background-color: rgba(0, 2, 114, 0.6);
+  border-radius: 3px;
+}
+.box .Credentials {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Userinfo {
+  height: 40vh;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  background-color: rgba(122, 190, 214, 0.7);
+  color: #08095a;
+  font-family: "Lato";
+  font-weight: bold;
+  /* margin-bottom: 10%; */
+  border-radius: 5px;
+}
+.Useralign {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+}
+
+.Loginform input {
+  margin-left: 5%;
+  border-radius: 5px;
+  border: white;
+}
+.auth-button1 {
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  background-color: #08095a;
+  color: white;
+  border: 2px;
+  border-radius: 2px;
+  font-family: "Lato";
+  border-radius: 4px;
+}
+.divid {
+  width: 60%;
+}
+.divid input {
+  width: 90%;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0%;
+  font-weight: bold;
+}
+.Useralign label {
+  margin-bottom: 25%;
+}
+.Useralign input {
+  margin-bottom: 5%;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1100px) {
+  .Loginform h2 {
+    margin: auto;
+    font-size: 4vw;
+  }
+  .Loginform {
+    overflow-y: hidden;
+  }
+  .Loginform .box {
+    justify-content: space-evenly;
+    width: 90vw;
+  }
+  .Loginform .auth-button1 {
+    margin-bottom: 0%;
+  }
+}
+@media screen and (max-width: 920px) {
+  .Loginform h2 {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Userinfo {
+    width: 100%;
+  }
+  .Loginform .box {
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+  .Loginform h2 {
+    font-size: 6vw;
+  }
+  .Loginform .auth-button1 {
+    font-size: 4vw;
+    padding: 0.5vh;
+  }
+}
+
+/********************************************************************/
+.auth-page {
+  background-image: url("../Images/background_login.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.auth-form-box {
+  background-color: #000272;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+  border-radius: 7px;
+}
+
+.auth-header {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.auth-header-text {
+  font-size: 2em;
+  letter-spacing: 3px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  color: #fcfcfc;
+  padding-left: 40px;
+}
+
+.auth-header-line {
+  background: #ff6363;
+  height: 6px;
+  flex: auto;
+  margin-left: 10px;
+}
+
+.auth-form-inner-box {
+  margin: 40px;
+  background-color: #629cc1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  padding: 30px;
+  border-radius: 7px;
+}
+
+.auth-form {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.auth-form-label,
+.auth-form-input {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.auth-form-label > label {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.2em;
+  color: #08095a;
+  width: 220px;
+}
+
+.auth-form-input > input,
+.auth-form-input > select {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: #ffffff;
+}
+
+.auth-button {
+  background: #000272;
+  border-radius: 7px;
+  border: none;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.2em;
+  text-align: center;
+  color: #ffffff;
+  padding: 8px 20px;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.auth-button:hover {
+  cursor: pointer;
+}
+
+.auth-link {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1em;
+  text-align: center;
+  color: #000272;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  color: #fcfcfc;
+}
+
+@media only screen and (max-width: 500px) {
+  .auth-header-larger-heading {
+    justify-content: space-evenly;
+  }
+  .auth-header-text-larger-heading {
+    text-align: center;
+    padding-left: 0px;
+    letter-spacing: 1px;
+  }
+  .auth-header-line-larger-heading {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .auth-form-label {
+    display: none;
+  }
+  .auth-button {
+    font-size: 1em;
+  }
+}
+
+/* REGISTERATION PAGE */
+.large-input {
+  width: 640px;
+}
+.small-input {
+  width: 180px;
+}
+.small-select {
+  width: 200px;
+}
+@media only screen and (max-width: 1000px) {
+  .signup-form-label {
+    display: none;
+  }
+  .small-input {
+    width: 300px;
+  }
+  .small-select {
+    width: 320px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .large-input {
+    width: 440px;
+  }
+  .small-input {
+    width: 200px;
+  }
+  .small-select {
+    width: 220px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .large-input {
+    width: 340px;
+  }
+  .small-input {
+    width: 150px;
+  }
+  .small-select {
+    width: 170px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .large-input {
+    width: 240px;
+  }
+  .small-input {
+    width: 100px;
+  }
+  .small-select {
+    width: 120px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .signup-form {
+    flex-direction: column;
+  }
+  .large-input,
+  .small-input{
+    width: 70vw;
+  }
+  .small-select {
+    width: calc(70vw + 20px);
+  }
+}

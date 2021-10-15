@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Styles/Register.css";
+import "../../Styles/Auth.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { cities } from "../../Data/Cities";
@@ -19,7 +19,7 @@ function Register() {
   const [name, setName] = useState();
   const [college, setCollege] = useState();
   const [state, setState] = useState("Andaman and Nicobar Islands");
-  const [city, setCity] = useState(cities[state][0]);
+  const [city, setCity] = useState();
   const [year, setYear] = useState<YearOfStudy>(YearOfStudy.First);
   const [stream, setStream] = useState<Stream>(Stream.Btech);
   const [ca, setCa] = useState();
@@ -36,7 +36,7 @@ function Register() {
         college: college!,
         stream: stream!,
         yearOfStudy: year!,
-        city,
+        city: city!,
         state,
         campusAmb: ca,
       },
@@ -87,7 +87,7 @@ function Register() {
     }
   }
 
-  if (loading) return <Loader/>;
+  if (loading) return <Loader />;
 
   if (data?.createUser)
     return (
@@ -101,182 +101,235 @@ function Register() {
     );
 
   return (
-    <div className="Registerform">
-      <div className="box">
-        <h2>REGISTER</h2>
-        <form className="Main" onSubmit={registerHandler}>
-          <div className="button_content">
-            <div className="Userdetail">
-              <div className="Details">
-                <div className="Catogories">
-                  <label htmlFor="name">NAME</label>
-                  <input
-                    required={true}
-                    name="name"
-                    onChange={(e: any) => {
-                      setName(e.target.value);
-                    }}
-                    value={name}
-                  ></input>
-                </div>
-                <div className="Catogories">
-                  <label htmlFor="email">EMAIL ID</label>
-                  <input
-                    required
-                    name="email"
-                    type="email"
-                    onChange={(e: any) => {
-                      setEmail(e.target.value);
-                    }}
-                    value={email}
-                  ></input>
-                </div>
-                <div className="Catogories">
-                  <label htmlFor="pw">PASSWORD</label>
-                  <input
-                    required
-                    name="pw"
-                    type="password"
-                    onChange={(e: any) => {
-                      setPw(e.target.value);
-                    }}
-                    value={pw}
-                  ></input>
-                </div>
-                <div className="Catogories">
-                  <label htmlFor="confirm">CONFIRM PASSWORD</label>
-                  <input
-                    required
-                    name="confirm"
-                    type="password"
-                    onChange={(e: any) => {
-                      setCheckPw(e.target.value);
-                    }}
-                    value={checkPw}
-                  ></input>
-                </div>
-                <div className="Catogories">
-                  <label htmlFor="phno">PHONE NO</label>
-                  <input
-                    required
-                    name="phno"
-                    type="tel"
-                    onChange={(e: any) => {
-                      setPhNo(e.target.value);
-                    }}
-                    minLength={10}
-                    maxLength={10}
-                    value={phNo}
-                  ></input>
-                </div>
-                <div className="rowflex">
-                  <div className="Catogories">
-                    <label htmlFor="college">COLLEGE NAME</label>
-                    <input
-                      required
-                      name="college"
-                      onChange={(e: any) => {
-                        setCollege(e.target.value);
-                      }}
-                      value={college}
-                    ></input>
-                  </div>
-                  <div className="Catogories">
-                    <label htmlFor="stream">STREAM</label>
-                    <select
-                      required
-                      className="StateName"
-                      name="stream"
-                      id="stream"
-                      onChange={(e: any) => {
-                        setStream(e.target.value);
-                      }}
-                    >
-                      <option value={Stream.Btech}>B.Tech</option>
-                      <option value={Stream.Mtech}>M.Tech</option>
-                      <option value={Stream.BSc}>B.Sc</option>
-                      <option value={Stream.Msc}>M.Sc</option>
-                      <option value={Stream.Bse}>BSE</option>
-                      <option value={Stream.Others}>Other</option>
-                    </select>
-                  </div>
-                  <div className="Catogories">
-                    <label htmlFor="year">YEAR OF STUDY</label>
-                    <select
-                      required
-                      className="StateName"
-                      name="year"
-                      id="year"
-                      onChange={(e: any) => {
-                        setYear(e.target.value);
-                      }}
-                    >
-                      <option value={YearOfStudy.First}>1st Year</option>
-                      <option value={YearOfStudy.Second}>2nd Year</option>
-                      <option value={YearOfStudy.Third}>3rd Year</option>
-                      <option value={YearOfStudy.Fourth}>4th Year</option>
-                      <option value={YearOfStudy.Others}>Other</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="rowflex second">
-                  <div className="Catogories">
-                    <label htmlFor="state">STATE</label>
-                    <select
-                      className="StateName"
-                      required
-                      name="state"
-                      id="state"
-                      onChange={(e: any) => {
-                        setState(e.target.value);
-                      }}
-                      placeholder="Select State"
-                    >
-                      {Object.keys(cities).map((_state: any) => {
-                        return (
-                          <option key={_state} value={_state}>
-                            {_state}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  <div className="Catogories">
-                    <label htmlFor="city">CITY</label>
-                    <select
-                      className="CityName"
-                      required
-                      name="city"
-                      id="city"
-                      onChange={(e: any) => {
-                        setCity(e.target.value);
-                      }}
-                      placeholder="Select City"
-                    >
-                      {cities[state].map((_city: any) => {
-                        return (
-                          <option key={_city} value={_city}>
-                            {_city}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                </div>
-                <div className="Catogories">
-                  <label htmlFor="ca">CA referral (if any)</label>
-                  <input
-                    name="ca"
-                    onChange={(e: any) => {
-                      setCa(e.target.value);
-                    }}
-                    value={ca}
-                  ></input>
-                </div>
-              </div>
+    <div className="auth-page">
+      <div className="auth-form-box">
+        <div className="auth-header">
+          <div className="auth-header-text">REGISTER</div>
+          <div className="auth-header-line" />
+        </div>
+        <form
+          className="auth-form-inner-box"
+          action=""
+          onSubmit={registerHandler}
+        >
+          <div className="auth-form signup-form">
+            <div className="auth-form-label signup-form-label">
+              <label htmlFor="name">NAME</label>
             </div>
-            <button className="auth-button">REGISTER</button>
+            <div className="auth-form-input">
+              <input
+                required={true}
+                name="name"
+                onChange={(e: any) => {
+                  setName(e.target.value);
+                }}
+                value={name}
+                placeholder="Enter your full name"
+                className="large-input"
+              />
+            </div>
           </div>
+          <div className="auth-form signup-form" style={{paddingTop: "20px"}}>
+            <div className="auth-form-label signup-form-label">
+              <label htmlFor="email">EMAIL ID</label>
+            </div>
+            <div className="auth-form-input">
+              <input
+                required
+                name="email"
+                type="email"
+                onChange={(e: any) => {
+                  setEmail(e.target.value);
+                }}
+                value={email}
+                placeholder="Enter your email"
+                className="large-input"
+              />
+            </div>
+          </div>
+          <div className="auth-form signup-form" style={{ paddingTop: "20px" }}>
+            <div className="auth-form-label signup-form-label">
+              <label htmlFor="pw">PASSWORD</label>
+            </div>
+            <div className="auth-form-input">
+              <input
+                required
+                name="pw"
+                type="password"
+                onChange={(e: any) => {
+                  setPw(e.target.value);
+                }}
+                value={pw}
+                placeholder="Enter your password"
+                className="small-input"
+              />
+            </div>
+            <div className="auth-form-label signup-form-label">
+              <label htmlFor="confirm">CONFIRM PASSWORD</label>
+            </div>
+            <div className="auth-form-input">
+              <input
+                required
+                name="confirm"
+                type="password"
+                onChange={(e: any) => {
+                  setCheckPw(e.target.value);
+                }}
+                value={checkPw}
+                placeholder="Re-enter your password"
+                className="small-input"
+              />
+            </div>
+          </div>
+          <div className="auth-form signup-form" style={{ paddingTop: "20px" }}>
+            <div className="auth-form-label signup-form-label">
+              <label htmlFor="college">COLLEGE NAME</label>
+            </div>
+            <div className="auth-form-input">
+              <input
+                required
+                name="college"
+                onChange={(e: any) => {
+                  setCollege(e.target.value);
+                }}
+                value={college}
+                placeholder="Enter your full college name"
+                className="large-input"
+              />
+            </div>
+          </div>
+          <div className="auth-form signup-form" style={{ paddingTop: "20px" }}>
+            <div className="auth-form-label signup-form-label">
+              <label htmlFor="stream">PROGRAM</label>
+              <label htmlFor="state">STATE</label>
+            </div>
+            <div className="auth-form-input">
+              <select
+                required
+                name="stream"
+                id="stream"
+                onChange={(e: any) => {
+                  setStream(e.target.value);
+                }}
+                className="small-select"
+              >
+                <option value="" selected>Select your Program</option>
+                <option value={Stream.Btech}>B.Tech</option>
+                <option value={Stream.Mtech}>M.Tech</option>
+                <option value={Stream.BSc}>B.Sc</option>
+                <option value={Stream.Msc}>M.Sc</option>
+                <option value={Stream.Bse}>BSE</option>
+                <option value={Stream.Others}>Other</option>
+              </select>
+              <select
+                required
+                name="state"
+                id="state"
+                onChange={(e: any) => {
+                  setState(e.target.value);
+                }}
+                placeholder="Select State"
+                className="small-select"
+              >
+                <option value="" selected>Select your state</option>
+                {Object.keys(cities).map((_state: any) => {
+                  return (
+                    <option key={_state} value={_state}>
+                      {_state}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+            <div className="auth-form-label signup-form-label">
+              <label htmlFor="year">YEAR OF STUDY</label>
+              <label htmlFor="city">CITY</label>
+            </div>
+            <div className="auth-form-input">
+              <select
+                required
+                name="year"
+                id="year"
+                onChange={(e: any) => {
+                  setYear(e.target.value);
+                }}
+                className="small-select"
+              >
+                <option value="" selected>Select Year of Study</option>
+                <option value={YearOfStudy.First}>1st Year</option>
+                <option value={YearOfStudy.Second}>2nd Year</option>
+                <option value={YearOfStudy.Third}>3rd Year</option>
+                <option value={YearOfStudy.Fourth}>4th Year</option>
+                <option value={YearOfStudy.Others}>Other</option>
+              </select>
+              <select
+                required
+                name="city"
+                id="city"
+                onChange={(e: any) => {
+                  setCity(e.target.value);
+                }}
+                placeholder="Select City"
+                className="small-select"
+              >
+                <option value="" selected>Select your City</option>
+                {cities[state].map((_city: any) => {
+                  return (
+                    <option key={_city} value={_city}>
+                      {_city}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+          </div>
+          <div className="auth-form signup-form" style={{ paddingTop: "20px" }}>
+            <div className="auth-form-label signup-form-label">
+              <label htmlFor="phno">PHONE NUMBER</label>
+            </div>
+            <div className="auth-form-input">
+              <input
+                required
+                name="phno"
+                type="tel"
+                onChange={(e: any) => {
+                  setPhNo(e.target.value);
+                }}
+                minLength={10}
+                maxLength={10}
+                value={phNo}
+                placeholder="Enter your phone number"
+                className="large-input"
+              />
+            </div>
+          </div>
+          <div className="auth-form signup-form" style={{ paddingTop: "20px" }}>
+            <div className="auth-form-label signup-form-label">
+              <label htmlFor="ca">CA REFERRAL (If any)</label>
+            </div>
+            <div className="auth-form-input">
+              <input
+                name="ca"
+                onChange={(e: any) => {
+                  setCa(e.target.value);
+                }}
+                value={ca}
+                placeholder="CA referral (If any)"
+                className="large-input"
+              />
+            </div>
+          </div>
+          <button className="auth-button">REGISTER</button>
+          <a href="/login" className="auth-link">
+            Registered already? Login
+          </a>
+          <a
+            href="/resend-email"
+            className="auth-link"
+            style={{ marginTop: "8px" }}
+          >
+            Didn't recieve verification link?
+          </a>
         </form>
       </div>
     </div>

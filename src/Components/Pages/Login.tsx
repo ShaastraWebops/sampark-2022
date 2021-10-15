@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "../../Styles/Login.css";
+import "../../Styles/Auth.css";
 import { useState } from "react";
 import AuthContext from "../../Utils/contexts";
 import { useLoginMutation } from "../../generated/graphql";
@@ -74,43 +74,53 @@ function Login() {
     }
   }
 
-  if (loading) return <Loader/>;
+  if (loading) return <Loader />;
 
   return (
-    <div className="Loginform">
-      <div className="box">
-        <div className="header">
-          <h2>SIGNIN</h2>
-          <div className="line" />
+    <div className="auth-page">
+      <div className="auth-form-box">
+        <div className="auth-header">
+          <div className="auth-header-text">SIGN IN</div>
+          <div className="auth-header-line" />
         </div>
-        <form className="Credentials" action="" onSubmit={loginHandler}>
-          <div className="Userinfo">
-            <div className="Useralign">
-              <div className="info">
-                <label htmlFor="email">EMAIL ID:</label>
-                <label htmlFor="password">PASSWORD:</label>
-              </div>
-              <div className="divid">
-                <input
-                  required
-                  type="email"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  name="email"
-                />
-                <input
-                  required
-                  type="password"
-                  onChange={(e) => {
-                    setPw(e.target.value);
-                  }}
-                  name="password"
-                ></input>
-              </div>
+        <form className="auth-form-inner-box" action="" onSubmit={loginHandler}>
+          <div className="auth-form">
+            <div className="auth-form-label">
+              <label htmlFor="email">EMAIL ID</label>
+              <label htmlFor="password">PASSWORD</label>
             </div>
-            <button className="auth-button">Log In</button>
+            <div className="auth-form-input">
+              <input
+                required
+                type="email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                name="email"
+                placeholder="Enter your Email"
+              />
+              <input
+                required
+                type="password"
+                onChange={(e) => {
+                  setPw(e.target.value);
+                }}
+                name="password"
+                placeholder="Enter your Password"
+              />
+            </div>
           </div>
+          <button className="auth-button">LOG IN</button>
+          <a href="/register" className="auth-link">
+            New user? sign up
+          </a>
+          <a
+            href="/forgot-password"
+            className="auth-link"
+            style={{ marginTop: "8px" }}
+          >
+            Forgot Password?
+          </a>
         </form>
       </div>
     </div>
