@@ -36,9 +36,10 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 2em;
   color: #ffffff;
   text-align: center;
+  width: 50%;
 }
 
 .home-register {
