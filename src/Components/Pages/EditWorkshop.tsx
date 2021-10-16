@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useHistory, useParams } from "react-router-dom";
 import {
   CreateWorkshopInput,
@@ -90,7 +91,7 @@ const EditWorkshop = (probs: Probs) => {
             description: description,
             pic: null,
             workshopDate: workshopDate,
-            registrationCloseTime: registrationCloseTime,
+            registrationCloseTime: moment(parseInt(registrationCloseTime)).format("YYYY-MM-DD[T]HH:mm:ss"),
             contacts: contacts,
             picUrl: pic,
           }}
