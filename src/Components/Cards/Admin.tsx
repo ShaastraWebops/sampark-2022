@@ -22,7 +22,7 @@ const Admin = (props: Props) => {
         marginTop: "10px",
       }}
     >
-      <div className="sampark-one-line">
+      <div className="sampark-one-line" style={{width: "unset"}}>
         Total Registration: {count?.getUsersCount}
       </div>
       <button
