@@ -61,6 +61,11 @@ const WorkshopForm = (probs: Probs) => {
       <Formik
         initialValues={probs.initialValues}
         onSubmit={async (values, actions) => {
+          if (!url) {
+            window.alert(
+              "Upload the image by pressing the upload image button"
+            );
+          }
           let contactsStringArray: string[] = [];
           values.contacts.forEach((contact: any) =>
             contactsStringArray.push(JSON.stringify(contact))
@@ -140,7 +145,7 @@ const WorkshopForm = (probs: Probs) => {
                   {({ field }: { field: any }) => (
                     <input
                       {...field}
-                      required={true}
+                      required={!url}
                       type="file"
                       id="pic"
                       onChange={(e) => setImage(e.target.files![0])}
