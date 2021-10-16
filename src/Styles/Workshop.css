@@ -88,26 +88,25 @@
   text-align: center;
   font-size: 1.3em;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 0 20px;
 }
-/* }
-
-.workshop-contacts-list {
-  background-color: #ca6682;
-}*/
+.workshop-date,
+.workshop-deadline {
+  padding: 20px;
+}
 
 .workshop-contacts-list-heading {
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: #ffffff;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .workshop-contact {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .workshop-contact-email,

@@ -68,7 +68,7 @@ const Workshop = (props: Props) => {
             <div>DATE</div>
             <div
               style={{
-                marginTop: "3px",
+                marginTop: "5px",
                 fontWeight: "normal",
               }}
             >
@@ -79,7 +79,7 @@ const Workshop = (props: Props) => {
             <div>REGISTRATION DEADLINE</div>
             <div
               style={{
-                marginTop: "3px",
+                marginTop: "5px",
                 fontWeight: "normal",
               }}
             >
