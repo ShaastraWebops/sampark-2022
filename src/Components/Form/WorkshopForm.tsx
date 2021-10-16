@@ -189,7 +189,7 @@ const WorkshopForm = (probs: Probs) => {
                               name={`contacts.${index}.email`}
                               placeholder="Email"
                               type="email"
-                              required={true}
+                              // required={true}
                             />
                           </div>
                           <div className="form-contact-input">
@@ -200,7 +200,7 @@ const WorkshopForm = (probs: Probs) => {
                               name={`contacts.${index}.number`}
                               placeholder="Number"
                               type="number"
-                              required={true}
+                              // required={true}
                             />
                           </div>
                           <div className="col">

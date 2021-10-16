@@ -99,18 +99,22 @@ const Workshop = (props: Props) => {
                   <div style={{ textAlign: "start" }}>
                     {parsedContact.name} :
                   </div>
-                  <a
-                    href={`mailto:${parsedContact.email}`}
-                    className="workshop-contact-email"
-                  >
-                    <div>&nbsp;{parsedContact.email}</div>
-                  </a>
-                  <a
-                    href={`http://wa.me/+91${parsedContact.number}`}
-                    className="workshop-contact-number"
-                  >
-                    <div>&nbsp;{parsedContact.number}</div>
-                  </a>
+                  {parsedContact.email && (
+                    <a
+                      href={`mailto:${parsedContact.email}`}
+                      className="workshop-contact-email"
+                    >
+                      <div>&nbsp;{parsedContact.email}</div>
+                    </a>
+                  )}
+                  {parsedContact.number && (
+                    <a
+                      href={`http://wa.me/+91${parsedContact.number}`}
+                      className="workshop-contact-number"
+                    >
+                      <div>&nbsp;{parsedContact.number}</div>
+                    </a>
+                  )}
                 </div>
               );
             })}
