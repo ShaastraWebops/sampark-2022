@@ -27,7 +27,7 @@ const AdminWorkshop = (props: Props) => {
       >
         EDIT WORKSHOP
       </button>
-      <button className="register-button">DELETE WORKSHOP</button>
+      {/* <button className="register-button">DELETE WORKSHOP</button> */}
       <button
         className="register-button"
         onClick={() =>
