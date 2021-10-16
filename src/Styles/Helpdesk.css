@@ -16,12 +16,12 @@
 
 .faq .question {
   background-color: #626cbe;
-  width: 50%;
+  width: 49%;
   max-width: 800px;
   height: auto;
   margin: 5px 0;
   border-radius: 7px;
-  padding: 15px 25px;
+  padding: 2px 12px;
   cursor: pointer;
   transition: 0.5s;
   display: flex;
@@ -106,14 +106,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
-  height: fit-content;
+  padding: 2px 5px;
+  height: 25px;
+}
+
+.question-ctn {
+  position: fixed;
+  bottom: 5%;
+  width: 100%;
 }
 
 .input-ctn {
   width: 50%;
   max-width: 600px;
-  height: auto;
   border-radius: 7px;
   border: 2px solid #000272;
   padding: 10px 20px;
@@ -124,6 +129,12 @@
   margin-right: 10px;
 }
 
+.search-bar input,
+.question-ctn input {
+  height: 26px;
+  cursor: default;
+}
+
 .button-ctn {
   background-color: #000272;
   width: 10%;
@@ -132,6 +143,7 @@
   border: none;
   border-radius: 7px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .form-icon {
