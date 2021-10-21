@@ -7,7 +7,6 @@
 .workshop-content {
   display: grid;
   grid-template-columns: auto max-content;
-  grid-template-rows: 395px min-content;
   align-items: flex-start;
   justify-content: space-evenly;
   width: 100%;
@@ -30,7 +29,7 @@
   color: #ffffff;
 }
 
-.workshop-description a{
+.workshop-description a {
   color: #000272;
 }
 
@@ -94,19 +93,17 @@
   color: #ffffff;
   padding: 0 20px;
 }
-.workshop-date,
-.workshop-deadline {
-  padding: 20px;
-}
 
-.workshop-contacts-list-heading {
+.workshop-contacts-list-heading,
+.workshop-date-heading,
+.workshop-deadline-heading {
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.2em;
   color: #ffffff;
   text-align: center;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
 }
 
 .workshop-contact {

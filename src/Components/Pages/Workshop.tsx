@@ -47,7 +47,13 @@ const Workshop = (props: Props) => {
       {role === UserRole.Admin && (
         <AdminWorkshop title={data?.getWorkshop.title!} />
       )}
-      <div className="workshop-content">
+      <div
+        className="workshop-content"
+        style={{
+          gridTemplateRows:
+            role === UserRole.User ? "480px min-content" : "410px min-content",
+        }}
+      >
         <div className="workshop-description">
           {parse(converter.makeHtml(data?.getWorkshop.description!))}
         </div>
@@ -65,10 +71,10 @@ const Workshop = (props: Props) => {
             />
           )}
           <div className="workshop-date">
-            <div>DATE</div>
+            <div className="workshop-date-heading">DATE</div>
             <div
               style={{
-                marginTop: "5px",
+                paddingBottom: "20px",
                 fontWeight: "normal",
               }}
             >
@@ -76,10 +82,12 @@ const Workshop = (props: Props) => {
             </div>
           </div>
           <div className="workshop-deadline">
-            <div>REGISTRATION DEADLINE</div>
+            <div className="workshop-deadline-heading">
+              REGISTRATION DEADLINE
+            </div>
             <div
               style={{
-                marginTop: "5px",
+                paddingBottom: "20px",
                 fontWeight: "normal",
               }}
             >
