@@ -113,7 +113,7 @@ const RegisterButton = (props: Props) => {
             )}
             {error && (
               <Popup
-                message={error.message}
+                message={"Registration failed. Please retry"}
                 close={closePopupHandler}
                 popupType={"ERROR"}
               />

@@ -41,8 +41,9 @@ const Logout = () => {
     localStorage.removeItem("role");
     localStorage.removeItem("spID");
     const closeHandler = () => {
-      history.push("/");
       setRole("");
+      history.push("/");
+      window.location.reload()
     };
     return (
       <Popup

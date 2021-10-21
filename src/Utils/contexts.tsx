@@ -16,9 +16,9 @@ function AuthContextProvider(props: {
     | null
     | undefined;
 }) {
-  const [role, setRole] = useState(
-    (!!document.cookie ? localStorage.getItem("role") : null)!
-  );
+  const isCookieAvailable = !!document.cookie;
+  const a = isCookieAvailable ? localStorage.getItem("role") : null;
+  const [role, setRole] = useState(a!);
   const authContext = useMemo(() => ({ role, setRole }), [role, setRole]);
 
   return (

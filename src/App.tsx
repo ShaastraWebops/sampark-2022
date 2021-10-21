@@ -16,6 +16,7 @@ import Profile from "./Components/Pages/Profile";
 import Register from "./Components/Pages/Register";
 import Verify from "./Components/Pages/Verify";
 import Helpdesk from "./Components/Pages/Helpdesk";
+import LogoutOnAuthError from "./Components/Pages/LogoutOnAuthError";
 
 function App() {
   const { role } = useContext(AuthContext)!;
@@ -45,6 +46,9 @@ function App() {
       </Route>
       <Route exact path="/logout">
         {!!role ? <Logout /> : <Redirect to="/" />}
+      </Route>
+      <Route exact path="/error">
+        {!!localStorage.getItem("role") ? <LogoutOnAuthError /> : <Redirect to="/" />}
       </Route>
       {/* <Route exact path="/profile">
         {!!role ? <Profile /> : <Redirect to="/login" />}
